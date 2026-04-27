@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
@@ -44,13 +43,13 @@ export default function LandingPage() {
               boxShadow: '0 8px 32px rgba(44,76,59,0.06)',
             }}
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/logo.png"
               alt="Bite: Mindful Eating"
               width={140}
               height={140}
               className="object-contain"
-              priority
             />
           </div>
 

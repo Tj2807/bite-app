@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { UserGoals, DEFAULT_GOALS } from '@/types';
 import { getGoals, saveGoals } from '@/lib/goals';
+import { AppShell } from '@/components/layout/AppShell';
 
 export default function SettingsPage() {
   const [goals, setGoals] = useState<UserGoals>(DEFAULT_GOALS);
@@ -20,6 +21,7 @@ export default function SettingsPage() {
     setGoals(prev => ({ ...prev, [key]: Number(val) }));
 
   return (
+    <AppShell>
     <div className="h-full overflow-y-auto scrollbar-thin" style={{ backgroundColor: 'var(--color-background)' }}>
       <div className="max-w-2xl mx-auto px-6 py-8 space-y-6">
 
@@ -120,6 +122,7 @@ export default function SettingsPage() {
 
       </div>
     </div>
+    </AppShell>
   );
 }
 

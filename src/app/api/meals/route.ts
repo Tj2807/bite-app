@@ -9,10 +9,21 @@ export async function GET(req: NextRequest) {
 
   const supabase = createServerSupabaseClient();
   const { searchParams } = new URL(req.url);
-  const date = searchParams.get('date') ?? new Date().toISOString().split('T')[0];
 
-  const startOfDay = `${date}T00:00:00.000Z`;
-  const endOfDay   = `${date}T23:59:59.999Z`;
+  // Prefer explicit UTC-boundary params sent by the client in its local timezone.
+  // Fall back to a UTC-date-based range if not provided.
+  let startOfDay: string;
+  let endOfDay: string;
+  const startParam = searchParams.get('start');
+  const endParam   = searchParams.get('end');
+  if (startParam && endParam) {
+    startOfDay = startParam;
+    endOfDay   = endParam;
+  } else {
+    const date = searchParams.get('date') ?? new Date().toISOString().split('T')[0];
+    startOfDay = `${date}T00:00:00.000Z`;
+    endOfDay   = `${date}T23:59:59.999Z`;
+  }
 
   const { data, error } = await supabase
     .from('meals')

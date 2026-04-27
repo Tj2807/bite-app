@@ -12,18 +12,24 @@ export function TodayPanel({ refreshKey }: TodayPanelProps) {
   const [goals, setGoals]     = useState<UserGoals>(DEFAULT_GOALS);
   const [loading, setLoading] = useState(true);
 
-  // Use local date (not UTC) so IST users past midnight see today's meals
-  const todayStr = new Date().toLocaleDateString('en-CA'); // gives YYYY-MM-DD in local TZ
+  // Compute local-midnight boundaries so the query is timezone-correct.
+  // e.g. for a CT user (UTC-5), midnight CT = 05:00 UTC, so we send that
+  // as the start and next midnight CT as the end — not UTC date strings.
+  const now = new Date();
+  const localStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+  const localEnd   = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+  const startISO = localStart.toISOString();
+  const endISO   = localEnd.toISOString();
 
   const fetchMeals = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/meals?date=${todayStr}`);
+      const res = await fetch(`/api/meals?start=${encodeURIComponent(startISO)}&end=${encodeURIComponent(endISO)}`);
       const data = await res.json();
       setMeals(Array.isArray(data) ? data : []);
     } catch { setMeals([]); }
     finally { setLoading(false); }
-  }, [todayStr]);
+  }, [startISO, endISO]);
 
   useEffect(() => {
     setGoals(getGoals());
