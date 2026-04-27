@@ -3,21 +3,20 @@
 import { useState } from 'react';
 import { ChatPanel }  from '@/components/daily-log/ChatPanel';
 import { TodayPanel } from '@/components/daily-log/TodayPanel';
-
-type MobileTab = 'chat' | 'today';
+import { TabToggle, MobileTab } from '@/components/daily-log/TabToggle';
 
 export default function DailyLogPage() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [mobileTab, setMobileTab] = useState<MobileTab>('chat');
 
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-full w-full overflow-hidden">
 
       {/* ── Chat Panel ──────────────────────────────────────────────────────
           Mobile: full width, hidden when "today" tab is active
           Desktop: left 55%, always visible                                 */}
       <div className={[
-        'flex-col h-full',
+        'flex-col h-full min-w-0',
         'md:flex md:flex-1 md:max-w-[55%] md:border-r md:border-bite-outline-light',
         mobileTab === 'chat' ? 'flex flex-1' : 'hidden',
       ].join(' ')}>
@@ -33,7 +32,7 @@ export default function DailyLogPage() {
                   prefixed with a mobile header that holds the toggle
           Desktop: right 45%, always visible (mobile header hidden)         */}
       <div className={[
-        'flex-col h-full overflow-hidden',
+        'flex-col h-full overflow-hidden min-w-0',
         'md:flex md:flex-1',
         mobileTab === 'today' ? 'flex flex-1' : 'hidden',
       ].join(' ')}>
@@ -68,33 +67,6 @@ export default function DailyLogPage() {
         </div>
       </div>
 
-    </div>
-  );
-}
-
-// ── Shared toggle pill ────────────────────────────────────────────────────────
-
-export function TabToggle({ tab, onTabChange }: { tab: MobileTab; onTabChange: (t: MobileTab) => void }) {
-  return (
-    <div
-      className="flex items-center rounded-full p-1 flex-shrink-0"
-      style={{ backgroundColor: 'var(--color-surface-container-high)' }}
-    >
-      {(['chat', 'today'] as MobileTab[]).map(t => (
-        <button
-          key={t}
-          onClick={() => onTabChange(t)}
-          className="py-1.5 px-4 rounded-full font-medium capitalize transition-all duration-200"
-          style={{
-            fontSize: '11px',
-            backgroundColor: tab === t ? 'var(--color-primary)' : 'transparent',
-            color: tab === t ? 'var(--color-on-primary)' : 'var(--color-on-surface-variant)',
-            boxShadow: tab === t ? '0 1px 3px rgba(44,76,59,0.2)' : 'none',
-          }}
-        >
-          {t === 'chat' ? 'Chat' : 'Today'}
-        </button>
-      ))}
     </div>
   );
 }

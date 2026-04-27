@@ -2,9 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { ChatMessage, LoggedMealCard } from '@/types';
-import { TabToggle } from '@/app/(app)/log/page';
-
-type MobileTab = 'chat' | 'today';
+import { TabToggle, MobileTab } from '@/components/daily-log/TabToggle';
 
 interface ChatPanelProps {
   onMealLogged: () => void;

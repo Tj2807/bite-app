@@ -245,13 +245,14 @@ function MacroCard({ icon, label, value, target, bg, iconBg, iconColor, textColo
         </span>
       </div>
       <div>
-        {/* Value + target label — mirrors the Energy card layout */}
+        {/* Value + target: side-by-side on desktop, value-only on mobile */}
         <div className="flex items-end justify-between gap-2">
           <div className="flex items-baseline gap-1">
             <span className="text-headline-md" style={{ color: textColor }}>{value.toFixed(0)}</span>
             <span className="text-body-md" style={{ color: 'var(--color-on-surface-variant)' }}>g</span>
           </div>
-          <span className="text-label-sm mb-0.5" style={{ color: 'rgba(66,72,67,0.55)', fontSize: '11px' }}>
+          {/* Desktop: target inline next to value */}
+          <span className="hidden md:block text-label-sm mb-0.5" style={{ color: 'rgba(66,72,67,0.55)', fontSize: '11px' }}>
             Target: {target}g
           </span>
         </div>
@@ -269,6 +270,10 @@ function MacroCard({ icon, label, value, target, bg, iconBg, iconColor, textColo
             }}
           />
         </div>
+        {/* Mobile: target below the bar */}
+        <span className="md:hidden mt-1.5 block" style={{ color: 'rgba(66,72,67,0.55)', fontSize: '11px' }}>
+          Target: {target}g
+        </span>
       </div>
     </div>
   );
