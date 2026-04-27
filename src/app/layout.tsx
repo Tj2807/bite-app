@@ -30,6 +30,27 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Bite — Mindful Eating',
   description: 'Your AI-powered mindful nutrition coach',
+  icons: {
+    icon: [
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico',  sizes: 'any' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'Bite — Mindful Eating',
+    description: 'Part guide, part coach, all nutritionist. Meet Bite.',
+    url: 'https://mindyourbite.vercel.app',
+    siteName: 'Bite',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Bite — Mindful Eating' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bite — Mindful Eating',
+    description: 'Part guide, part coach, all nutritionist. Meet Bite.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
