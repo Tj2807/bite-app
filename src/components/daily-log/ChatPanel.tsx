@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import Image from 'next/image';
 import { ChatMessage, LoggedMealCard } from '@/types';
 
 interface ChatPanelProps {
@@ -117,7 +116,8 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
           className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0"
           style={{ border: '2px solid var(--color-primary-fixed)', backgroundColor: '#F5F1E6' }}
         >
-          <Image src="/logo.png" alt="Bite" width={48} height={48} className="w-full h-full object-cover p-1" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Bite" width={48} height={48} className="w-full h-full object-cover p-1" />
         </div>
         <div>
           <h2 className="text-headline-sm" style={{ color: 'var(--color-primary)' }}>Bite Assistant</h2>
@@ -222,7 +222,8 @@ function AvatarMini() {
       className="w-8 h-8 rounded-full flex-shrink-0 overflow-hidden"
       style={{ backgroundColor: 'var(--color-primary-fixed)' }}
     >
-      <Image src="/logo.png" alt="B" width={32} height={32} className="w-full h-full object-cover p-0.5 rounded-full" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo.png" alt="B" width={32} height={32} className="w-full h-full object-cover p-0.5 rounded-full" />
     </div>
   );
 }

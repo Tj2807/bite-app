@@ -12,7 +12,8 @@ export function TodayPanel({ refreshKey }: TodayPanelProps) {
   const [goals, setGoals]     = useState<UserGoals>(DEFAULT_GOALS);
   const [loading, setLoading] = useState(true);
 
-  const todayStr = new Date().toISOString().split('T')[0];
+  // Use local date (not UTC) so IST users past midnight see today's meals
+  const todayStr = new Date().toLocaleDateString('en-CA'); // gives YYYY-MM-DD in local TZ
 
   const fetchMeals = useCallback(async () => {
     setLoading(true);

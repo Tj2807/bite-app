@@ -1,8 +1,12 @@
 import { createServerSupabaseClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/supabase-server';
 import { NextRequest, NextResponse } from 'next/server';
 
 // GET /api/meals?date=YYYY-MM-DD
 export async function GET(req: NextRequest) {
+  const user = await getAuthUser(req);
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   const supabase = createServerSupabaseClient();
   const { searchParams } = new URL(req.url);
   const date = searchParams.get('date') ?? new Date().toISOString().split('T')[0];
@@ -13,6 +17,7 @@ export async function GET(req: NextRequest) {
   const { data, error } = await supabase
     .from('meals')
     .select('*')
+    .eq('user_id', user.id)
     .gte('logged_at', startOfDay)
     .lte('logged_at', endOfDay)
     .order('logged_at', { ascending: true });
@@ -23,6 +28,9 @@ export async function GET(req: NextRequest) {
 
 // POST /api/meals — manual meal entry
 export async function POST(req: NextRequest) {
+  const user = await getAuthUser(req);
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   const supabase = createServerSupabaseClient();
   const body = await req.json();
 
@@ -35,6 +43,7 @@ export async function POST(req: NextRequest) {
       nutrition: body.nutrition ?? {},
       notes: body.notes,
       is_cheat_day: body.is_cheat_day ?? false,
+      user_id: user.id,
     })
     .select()
     .single();
@@ -45,13 +54,22 @@ export async function POST(req: NextRequest) {
 
 // DELETE /api/meals?id=uuid
 export async function DELETE(req: NextRequest) {
+  const user = await getAuthUser(req);
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   const supabase = createServerSupabaseClient();
   const { searchParams } = new URL(req.url);
   const id = searchParams.get('id');
 
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 });
 
-  const { error } = await supabase.from('meals').delete().eq('id', id);
+  // Ensure user only deletes their own meals
+  const { error } = await supabase
+    .from('meals')
+    .delete()
+    .eq('id', id)
+    .eq('user_id', user.id);
+
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ success: true });
 }

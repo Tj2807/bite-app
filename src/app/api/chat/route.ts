@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createServerSupabaseClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/supabase-server';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Preferred model order — we'll intersect with what's actually available for the key
@@ -55,7 +56,7 @@ Always be concise. The app is calm and intentional.`;
 }
 
 // ── Fetch recent context ──────────────────────────────────────────────────────
-async function getRecentContext(): Promise<{ context: string; goals: string }> {
+async function getRecentContext(userId: string): Promise<{ context: string; goals: string }> {
   try {
     const supabase = createServerSupabaseClient();
     const sevenDaysAgo = new Date();
@@ -65,10 +66,11 @@ async function getRecentContext(): Promise<{ context: string; goals: string }> {
       supabase
         .from('daily_summaries')
         .select('*')
+        .eq('user_id', userId)
         .gte('date', sevenDaysAgo.toISOString().split('T')[0])
         .order('date', { ascending: false })
         .limit(7),
-      supabase.from('user_goals').select('*').limit(1),
+      supabase.from('user_goals').select('*').eq('user_id', userId).limit(1),
     ]);
 
     const goals = goalsRows?.[0] ?? { calories: 1900, protein_g: 160, carbs_g: 180, fat_g: 60, fiber_g: 30 };
@@ -94,7 +96,7 @@ function extractMealAction(text: string): Record<string, unknown> | null {
 }
 
 // ── Save meal to Supabase ─────────────────────────────────────────────────────
-async function saveMeal(action: Record<string, unknown>): Promise<void> {
+async function saveMeal(action: Record<string, unknown>, userId: string): Promise<void> {
   try {
     const supabase = createServerSupabaseClient();
     await supabase.from('meals').insert({
@@ -102,6 +104,7 @@ async function saveMeal(action: Record<string, unknown>): Promise<void> {
       meal_name: action.meal_name,
       calories: action.calories,
       nutrition: action.nutrition,
+      user_id: userId,
     });
   } catch (err) {
     console.error('[saveMeal]', err);
@@ -111,6 +114,9 @@ async function saveMeal(action: Record<string, unknown>): Promise<void> {
 // ── Main POST handler ─────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
+    const user = await getAuthUser(req);
+    if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
     const { messages } = await req.json() as {
       messages: Array<{ role: string; content: string }>;
     };
@@ -130,7 +136,7 @@ export async function POST(req: NextRequest) {
     }
 
     const [{ context, goals }, availableModels] = await Promise.all([
-      getRecentContext(),
+      getRecentContext(user.id),
       getAvailableModels(apiKey),
     ]);
     const systemInstruction = buildSystemPrompt(context, goals);
@@ -193,7 +199,7 @@ export async function POST(req: NextRequest) {
     let loggedMeal = null;
 
     if (action?.action === 'log_meal') {
-      await saveMeal(action);
+      await saveMeal(action, user.id);
       loggedMeal = {
         name: action.meal_name as string,
         calories: action.calories as number,
@@ -208,12 +214,12 @@ export async function POST(req: NextRequest) {
     const supabase = createServerSupabaseClient();
     const { error: userSaveErr } = await supabase
       .from('chat_messages')
-      .insert({ role: 'user', content: lastMessage });
+      .insert({ role: 'user', content: lastMessage, user_id: user.id });
     if (userSaveErr) console.error('[chat] Failed to save user message:', userSaveErr.message);
 
     const { error: assistantSaveErr } = await supabase
       .from('chat_messages')
-      .insert({ role: 'assistant', content: cleanMessage, logged_meal: loggedMeal });
+      .insert({ role: 'assistant', content: cleanMessage, logged_meal: loggedMeal, user_id: user.id });
     if (assistantSaveErr) console.error('[chat] Failed to save assistant message:', assistantSaveErr.message);
 
     console.log(`[chat] Responded via ${usedModel}`);

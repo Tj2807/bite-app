@@ -1,8 +1,12 @@
 import { createServerSupabaseClient } from '@/lib/supabase';
+import { getAuthUser } from '@/lib/supabase-server';
 import { NextRequest, NextResponse } from 'next/server';
 
 // GET /api/trends?range=all|7d|30d
 export async function GET(req: NextRequest) {
+  const user = await getAuthUser(req);
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   const supabase = createServerSupabaseClient();
   const { searchParams } = new URL(req.url);
   const range = searchParams.get('range') ?? 'all';
@@ -11,11 +15,13 @@ export async function GET(req: NextRequest) {
   let summaryQuery = supabase
     .from('daily_summaries')
     .select('*')
+    .eq('user_id', user.id)
     .order('date', { ascending: true });
 
   let mealsQuery = supabase
     .from('meals')
     .select('*')
+    .eq('user_id', user.id)
     .order('logged_at', { ascending: false })
     .limit(100);
 

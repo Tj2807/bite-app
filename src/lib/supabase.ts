@@ -1,15 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseUrl     = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const serviceRoleKey  = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// ─── Browser client — uses cookies for session storage so PKCE verifier
+//     is accessible to the server-side callback route. Safe in client components.
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
-// Server-side client (uses service role key — never expose to browser)
-export const createServerSupabaseClient = () => {
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (serviceKey) {
-    return createClient(supabaseUrl, serviceKey);
-  }
-  return supabase;
-};
+// ─── Service-role client — server only, bypasses RLS ─────────────────────────
+export const createServerSupabaseClient = () =>
+  createClient(supabaseUrl, serviceRoleKey ?? supabaseAnonKey);
