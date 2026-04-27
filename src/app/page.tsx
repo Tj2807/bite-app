@@ -34,7 +34,7 @@ export default function LandingPage() {
 
           {/* Wordmark */}
           <h1
-            className="mb-6 md:mb-8 tracking-wide font-medium italic"
+            className="mb-6 md:mb-8 tracking-wide font-medium"
             style={{
               fontFamily: '"Playfair Display", "Noto Serif", serif',
               fontSize: 'clamp(72px, 16vw, 120px)',
