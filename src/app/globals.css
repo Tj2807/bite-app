@@ -1,0 +1,156 @@
+/* ── Google Fonts — must come before all other rules ─────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+/* ── Tailwind v4 Design Tokens ────────────────────────────────────────────── */
+@theme {
+  /* Full color palette from Bite stitch design */
+  --color-primary:                  #153526;
+  --color-primary-container:        #2c4c3b;
+  --color-on-primary:               #ffffff;
+  --color-on-primary-container:     #98bca6;
+  --color-primary-fixed:            #c7ebd4;
+  --color-primary-fixed-dim:        #abcfb8;
+
+  --color-secondary:                #566342;
+  --color-secondary-container:      #d7e5bb;
+  --color-on-secondary:             #ffffff;
+  --color-on-secondary-container:   #5a6745;
+  --color-secondary-fixed:          #dae8be;
+  --color-secondary-fixed-dim:      #becca3;
+
+  --color-tertiary:                 #303028;
+  --color-tertiary-container:       #46463e;
+  --color-on-tertiary:              #ffffff;
+  --color-on-tertiary-container:    #b6b4a9;
+  --color-tertiary-fixed:           #e5e2d8;
+  --color-tertiary-fixed-dim:       #c9c7bc;
+
+  --color-surface:                  #faf9f5;
+  --color-surface-bright:           #faf9f5;
+  --color-surface-dim:              #dbdad6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low:    #f4f4f0;
+  --color-surface-container:        #efeeea;
+  --color-surface-container-high:   #e9e8e4;
+  --color-surface-container-highest:#e3e2df;
+  --color-surface-variant:          #e3e2df;
+  --color-surface-tint:             #456553;
+
+  --color-on-surface:               #1b1c1a;
+  --color-on-surface-variant:       #424843;
+  --color-on-background:            #1b1c1a;
+  --color-background:               #faf9f5;
+
+  --color-outline:                  #727973;
+  --color-outline-variant:          #c1c8c2;
+
+  --color-inverse-surface:          #2f312e;
+  --color-inverse-on-surface:       #f2f1ed;
+  --color-inverse-primary:          #abcfb8;
+
+  --color-error:                    #ba1a1a;
+  --color-on-error:                 #ffffff;
+  --color-error-container:          #ffdad6;
+  --color-on-error-container:       #93000a;
+
+  /* Typography */
+  --font-serif: 'Noto Serif', Georgia, serif;
+  --font-sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Border radius — matching stitch */
+  --radius:      0.25rem;
+  --radius-lg:   0.5rem;
+  --radius-xl:   0.75rem;
+  --radius-2xl:  1rem;
+  --radius-full: 9999px;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Utilities ────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .font-serif  { font-family: var(--font-serif); }
+  .font-sans   { font-family: var(--font-sans); }
+
+  /* Stitch typography scale */
+  .text-headline-lg {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  .text-headline-md {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .text-headline-sm {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .text-body-lg {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .text-body-md {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .text-label-sm {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.0;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* Thin scrollbar */
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 9999px;
+  }
+
+  /* Safe bottom for mobile nav */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+
+  /* Chat message entrance animation */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-chat { animation: fadeSlideUp 0.25s ease-out; }
+
+  /* Typing indicator */
+  @keyframes bounceDot {
+    0%, 80%, 100% { transform: translateY(0); }
+    40%           { transform: translateY(-5px); }
+  }
+  .dot-1 { animation: bounceDot 1.2s infinite 0.0s; }
+  .dot-2 { animation: bounceDot 1.2s infinite 0.2s; }
+  .dot-3 { animation: bounceDot 1.2s infinite 0.4s; }
+}

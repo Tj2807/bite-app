@@ -1,0 +1,57 @@
+import { createServerSupabaseClient } from '@/lib/supabase';
+import { NextRequest, NextResponse } from 'next/server';
+
+// GET /api/meals?date=YYYY-MM-DD
+export async function GET(req: NextRequest) {
+  const supabase = createServerSupabaseClient();
+  const { searchParams } = new URL(req.url);
+  const date = searchParams.get('date') ?? new Date().toISOString().split('T')[0];
+
+  const startOfDay = `${date}T00:00:00.000Z`;
+  const endOfDay   = `${date}T23:59:59.999Z`;
+
+  const { data, error } = await supabase
+    .from('meals')
+    .select('*')
+    .gte('logged_at', startOfDay)
+    .lte('logged_at', endOfDay)
+    .order('logged_at', { ascending: true });
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json(data ?? []);
+}
+
+// POST /api/meals — manual meal entry
+export async function POST(req: NextRequest) {
+  const supabase = createServerSupabaseClient();
+  const body = await req.json();
+
+  const { data, error } = await supabase
+    .from('meals')
+    .insert({
+      logged_at: body.logged_at ?? new Date().toISOString(),
+      meal_name: body.meal_name,
+      calories: body.calories,
+      nutrition: body.nutrition ?? {},
+      notes: body.notes,
+      is_cheat_day: body.is_cheat_day ?? false,
+    })
+    .select()
+    .single();
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json(data, { status: 201 });
+}
+
+// DELETE /api/meals?id=uuid
+export async function DELETE(req: NextRequest) {
+  const supabase = createServerSupabaseClient();
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get('id');
+
+  if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 });
+
+  const { error } = await supabase.from('meals').delete().eq('id', id);
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json({ success: true });
+}

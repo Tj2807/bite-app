@@ -1,0 +1,1994 @@
+[
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Snack: BSN Syntha-6 (1.5 scoops)",
+    "calories": 300,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 22.5,
+      "fat_g": 9.0,
+      "fiber_g": 7.5
+    },
+    "notes": "Good protein start but high carb/sugar for a whey isolate substitute."
+  },
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Lunch: Grilled Chicken + Rice + Zucchini",
+    "calories": 510,
+    "nutrition": {
+      "protein_g": 46.0,
+      "carbs_g": 49.0,
+      "fat_g": 13.0,
+      "fiber_g": 2.0
+    },
+    "notes": "High protein but very low fiber. Volume was good."
+  },
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Snack: Red Apple",
+    "calories": 116,
+    "nutrition": {
+      "protein_g": 1.0,
+      "carbs_g": 31.0,
+      "fat_g": 0.4,
+      "fiber_g": 5.4
+    },
+    "notes": "Critical fiber addition; avoided processed sugar (Twix)."
+  },
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Beverage: Black Coffee",
+    "calories": 5,
+    "nutrition": {
+      "protein_g": 0.4,
+      "carbs_g": 0.0,
+      "fat_g": 0.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Pre-workout caffeine; negligible calories."
+  },
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Dinner: Super Oats Smoothie (Walnuts/Chia/Cocoa)",
+    "calories": 685,
+    "nutrition": {
+      "protein_g": 38.0,
+      "carbs_g": 80.0,
+      "fat_g": 27.0,
+      "fiber_g": 16.0
+    },
+    "notes": "Heart-health powerhouse. Beta-glucan & Omega-3s. Fixed the daily fiber gap."
+  },
+  {
+    "logged_at": "2026-01-21T12:00:00+00:00",
+    "meal_name": "Late Snack: Non-Fat Greek Yogurt (250g)",
+    "calories": 148,
+    "nutrition": {
+      "protein_g": 26.0,
+      "carbs_g": 9.0,
+      "fat_g": 1.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Slow-digesting casein protein for overnight recovery."
+  },
+  {
+    "logged_at": "2026-01-22T12:00:00+00:00",
+    "meal_name": "1.5 Scoops BSN Syntha-6 Whey",
+    "calories": 300,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 22.5,
+      "fat_g": 9.0,
+      "fiber_g": 7.5
+    },
+    "notes": "Strong morning start."
+  },
+  {
+    "logged_at": "2026-01-22T12:00:00+00:00",
+    "meal_name": "Chicken, Peas, Mashed Potato, Carrots",
+    "calories": 566,
+    "nutrition": {
+      "protein_g": 68.0,
+      "carbs_g": 53.0,
+      "fat_g": 7.0,
+      "fiber_g": 12.0
+    },
+    "notes": "High volume lunch. Excellent Micronutrients."
+  },
+  {
+    "logged_at": "2026-01-22T12:00:00+00:00",
+    "meal_name": "Masala Khichadi (88g Dal/85g Rice) & Makhana",
+    "calories": 902,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 164.0,
+      "fat_g": 12.0,
+      "fiber_g": 14.0
+    },
+    "notes": "Precise measurements used. Perfect caloric landing."
+  },
+  {
+    "logged_at": "2026-01-23T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supplements",
+    "calories": 792,
+    "nutrition": {
+      "protein_g": 50.0,
+      "carbs_g": 92.0,
+      "fat_g": 27.5,
+      "fiber_g": 15.0
+    },
+    "notes": "Heavy oats/Syntha-6 load. Good Omega-3 start."
+  },
+  {
+    "logged_at": "2026-01-23T12:00:00+00:00",
+    "meal_name": "Snack: Dark Chocolate Truffle",
+    "calories": 90,
+    "nutrition": {
+      "protein_g": 1.0,
+      "carbs_g": 9.0,
+      "fat_g": 6.0,
+      "fiber_g": 0.5
+    },
+    "notes": "Small indulgence."
+  },
+  {
+    "logged_at": "2026-01-23T12:00:00+00:00",
+    "meal_name": "Lunch: Good&Gather Salad (1/2 bag)",
+    "calories": 228,
+    "nutrition": {
+      "protein_g": 5.3,
+      "carbs_g": 14.0,
+      "fat_g": 19.3,
+      "fiber_g": 3.5
+    },
+    "notes": "High fat from dressing, low protein efficiency."
+  },
+  {
+    "logged_at": "2026-01-23T12:00:00+00:00",
+    "meal_name": "Dinner: Air Fryer Chicken Breast",
+    "calories": 270,
+    "nutrition": {
+      "protein_g": 52.0,
+      "carbs_g": 1.0,
+      "fat_g": 3.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Lean protein save. No oil used."
+  },
+  {
+    "logged_at": "2026-01-23T12:00:00+00:00",
+    "meal_name": "Night Smoothie (Yogurt/Chia/Cocoa)",
+    "calories": 392,
+    "nutrition": {
+      "protein_g": 48.0,
+      "carbs_g": 30.0,
+      "fat_g": 10.0,
+      "fiber_g": 12.0
+    },
+    "notes": "Syntha-6 label (6g fiber!) + 1 tbsp Chia/Cocoa = 100% Fiber Goal."
+  },
+  {
+    "logged_at": "2026-01-24T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supplements",
+    "calories": 751,
+    "nutrition": {
+      "protein_g": 48.2,
+      "carbs_g": 83.1,
+      "fat_g": 28.4,
+      "fiber_g": 22.0
+    },
+    "notes": "High fiber start (22g); loaded with Omega-3s."
+  },
+  {
+    "logged_at": "2026-01-24T12:00:00+00:00",
+    "meal_name": "Air-fried Chicken & Veggies",
+    "calories": 251,
+    "nutrition": {
+      "protein_g": 32.6,
+      "carbs_g": 13.0,
+      "fat_g": 6.1,
+      "fiber_g": 5.5
+    },
+    "notes": "Perfect cutting meal; very high volume for low cals."
+  },
+  {
+    "logged_at": "2026-01-24T12:00:00+00:00",
+    "meal_name": "Toast Chee Crackers (Snack)",
+    "calories": 73,
+    "nutrition": {
+      "protein_g": 1.7,
+      "carbs_g": 8.3,
+      "fat_g": 3.7,
+      "fiber_g": 0.3
+    },
+    "notes": "Light bridge snack."
+  },
+  {
+    "logged_at": "2026-01-24T12:00:00+00:00",
+    "meal_name": "Mutton Biryani (Rich)",
+    "calories": 550,
+    "nutrition": {
+      "protein_g": 22.0,
+      "carbs_g": 45.0,
+      "fat_g": 30.0,
+      "fiber_g": 2.5
+    },
+    "notes": "High fat/carb ratio; lower protein yield."
+  },
+  {
+    "logged_at": "2026-01-24T12:00:00+00:00",
+    "meal_name": "Butter Popcorn (Late Snack)",
+    "calories": 300,
+    "nutrition": {
+      "protein_g": 4.0,
+      "carbs_g": 28.0,
+      "fat_g": 19.0,
+      "fiber_g": 4.0
+    },
+    "notes": "Pushed calories over limit; high saturated fat end to day."
+  },
+  {
+    "logged_at": "2026-01-25T12:00:00+00:00",
+    "meal_name": "Syntha-6 Whey (2 Scoops)",
+    "calories": 400,
+    "nutrition": {
+      "protein_g": 44.0,
+      "carbs_g": 30.0,
+      "fat_g": 12.0,
+      "fiber_g": 10.0
+    },
+    "notes": "Strong start; high fiber for a protein shake."
+  },
+  {
+    "logged_at": "2026-01-25T12:00:00+00:00",
+    "meal_name": "Egg Bhurji (4 eggs) + 1 Roti + Veggies",
+    "calories": 645,
+    "nutrition": {
+      "protein_g": 32.0,
+      "carbs_g": 52.0,
+      "fat_g": 35.0,
+      "fiber_g": 12.0
+    },
+    "notes": "Nutrient dense; high volume from veggies."
+  },
+  {
+    "logged_at": "2026-01-25T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken (244g) + Walnuts",
+    "calories": 365,
+    "nutrition": {
+      "protein_g": 55.0,
+      "carbs_g": 4.0,
+      "fat_g": 10.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Pure protein focus; hit daily protein goal here."
+  },
+  {
+    "logged_at": "2026-01-25T12:00:00+00:00",
+    "meal_name": "Greek Yogurt Smoothie Bowl (185g + Chia/Cocoa)",
+    "calories": 270,
+    "nutrition": {
+      "protein_g": 20.0,
+      "carbs_g": 33.0,
+      "fat_g": 7.0,
+      "fiber_g": 7.0
+    },
+    "notes": "Perfect fiber capstone to hit 30g target."
+  },
+  {
+    "logged_at": "2026-01-25T12:00:00+00:00",
+    "meal_name": "Small Brownie",
+    "calories": 200,
+    "nutrition": {
+      "protein_g": 3.0,
+      "carbs_g": 28.0,
+      "fat_g": 10.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Late night treat; pushed slightly over calorie goal."
+  },
+  {
+    "logged_at": "2026-01-26T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supplements",
+    "calories": 734,
+    "nutrition": {
+      "protein_g": 48.0,
+      "carbs_g": 83.5,
+      "fat_g": 25.5,
+      "fiber_g": 16.0
+    },
+    "notes": "Great start; high Omega-3s and fiber."
+  },
+  {
+    "logged_at": "2026-01-26T12:00:00+00:00",
+    "meal_name": "Chicken Shawarma Wrap",
+    "calories": 775,
+    "nutrition": {
+      "protein_g": 54.0,
+      "carbs_g": 46.0,
+      "fat_g": 37.0,
+      "fiber_g": 4.0
+    },
+    "notes": "High calorie/sodium/fat outlier; volume low."
+  },
+  {
+    "logged_at": "2026-01-26T12:00:00+00:00",
+    "meal_name": "Chickpea & Yogurt Bowl",
+    "calories": 322,
+    "nutrition": {
+      "protein_g": 32.0,
+      "carbs_g": 35.0,
+      "fat_g": 6.0,
+      "fiber_g": 11.0
+    },
+    "notes": "Recovery meal; hit protein & fiber goals comfortably."
+  },
+  {
+    "logged_at": "2026-01-27T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie",
+    "calories": 748,
+    "nutrition": {
+      "protein_g": 48.5,
+      "carbs_g": 86.5,
+      "fat_g": 25.3,
+      "fiber_g": 16.2
+    },
+    "notes": "High fiber start (16g), dense calories from oats/nuts."
+  },
+  {
+    "logged_at": "2026-01-27T12:00:00+00:00",
+    "meal_name": "Snack (Tofu + Chili)",
+    "calories": 318,
+    "nutrition": {
+      "protein_g": 27.5,
+      "carbs_g": 19.0,
+      "fat_g": 16.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Good soy protein, but sauce added sugar."
+  },
+  {
+    "logged_at": "2026-01-27T12:00:00+00:00",
+    "meal_name": "Lunch (Tuna Wrap)",
+    "calories": 540,
+    "nutrition": {
+      "protein_g": 43.0,
+      "carbs_g": 38.0,
+      "fat_g": 23.0,
+      "fiber_g": 4.0
+    },
+    "notes": "High protein lunch, Swiss cheese drove fat up."
+  },
+  {
+    "logged_at": "2026-01-27T12:00:00+00:00",
+    "meal_name": "Dinner (Chicken + Veg)",
+    "calories": 308,
+    "nutrition": {
+      "protein_g": 46.0,
+      "carbs_g": 12.0,
+      "fat_g": 8.0,
+      "fiber_g": 4.0
+    },
+    "notes": "Saved 1/3 chicken to hit calorie goal exactly."
+  },
+  {
+    "logged_at": "2026-01-28T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Tabs",
+    "calories": 739,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 79.0,
+      "fat_g": 27.5,
+      "fiber_g": 22.0
+    },
+    "notes": "High fiber start (22g); used 50% of fat budget early on nuts/seeds."
+  },
+  {
+    "logged_at": "2026-01-28T12:00:00+00:00",
+    "meal_name": "Chobani Yogurt (Pineapple)",
+    "calories": 130,
+    "nutrition": {
+      "protein_g": 11.0,
+      "carbs_g": 16.0,
+      "fat_g": 2.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Good protein snack but added sugar was high (9g)."
+  },
+  {
+    "logged_at": "2026-01-28T12:00:00+00:00",
+    "meal_name": "Post-Workout Whey",
+    "calories": 300,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 22.5,
+      "fat_g": 9.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Essential post-workout recovery; high caloric cost for liquid."
+  },
+  {
+    "logged_at": "2026-01-28T12:00:00+00:00",
+    "meal_name": "Dinner 1 (Salad & Chickpeas)",
+    "calories": 329,
+    "nutrition": {
+      "protein_g": 10.0,
+      "carbs_g": 28.0,
+      "fat_g": 22.7,
+      "fiber_g": 7.5
+    },
+    "notes": "\"Macro mistake\" \u2014 dressing caused fat spillover with low protein return."
+  },
+  {
+    "logged_at": "2026-01-28T12:00:00+00:00",
+    "meal_name": "Dinner 2 (Chicken Breast)",
+    "calories": 355,
+    "nutrition": {
+      "protein_g": 58.5,
+      "carbs_g": 12.0,
+      "fat_g": 6.5,
+      "fiber_g": 0.0
+    },
+    "notes": "\"Clutch\" meal; saved the protein goal. High sodium from soy sauce."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie + Supplements",
+    "calories": 742,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 79.5,
+      "fat_g": 28.0,
+      "fiber_g": 15.3
+    },
+    "notes": "Strong start. Syntha-6 and nuts provided good fats but high calories."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Lunch: Tilapia w/ Veggies & Sides",
+    "calories": 420,
+    "nutrition": {
+      "protein_g": 36.0,
+      "carbs_g": 35.0,
+      "fat_g": 16.5,
+      "fiber_g": 6.5
+    },
+    "notes": "Good protein. Sauce ingredients (garlic/onion) caused digestive gas/bloating."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Snack: Hu Dark Chocolate (1/2 Bar)",
+    "calories": 190,
+    "nutrition": {
+      "protein_g": 3.0,
+      "carbs_g": 13.0,
+      "fat_g": 14.0,
+      "fiber_g": 3.0
+    },
+    "notes": "High quality fats/flavonoids. Calorie dense."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Snack: Raw Carrots",
+    "calories": 29,
+    "nutrition": {
+      "protein_g": 0.6,
+      "carbs_g": 6.7,
+      "fat_g": 0.1,
+      "fiber_g": 2.0
+    },
+    "notes": "Fiber top-up to help digestion."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Snack: Cheesecake (3/4 Slice)",
+    "calories": 150,
+    "nutrition": {
+      "protein_g": 3.8,
+      "carbs_g": 18.0,
+      "fat_g": 6.8,
+      "fiber_g": 0.0
+    },
+    "notes": "Treat meal. Spiked sugar/saturated fat."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Dinner: Chicken Breast (300g raw)",
+    "calories": 360,
+    "nutrition": {
+      "protein_g": 69.0,
+      "carbs_g": 0.0,
+      "fat_g": 8.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Massive protein serving to hit daily target."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Alcohol: Modelo Especial",
+    "calories": 144,
+    "nutrition": {
+      "protein_g": 1.0,
+      "carbs_g": 14.0,
+      "fat_g": 0.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Pushed day into calorie surplus."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Dinner Side: White Rice (150g)",
+    "calories": 195,
+    "nutrition": {
+      "protein_g": 4.0,
+      "carbs_g": 43.0,
+      "fat_g": 0.5,
+      "fiber_g": 0.6
+    },
+    "notes": "Added carb fuel for tomorrow's training."
+  },
+  {
+    "logged_at": "2026-01-29T12:00:00+00:00",
+    "meal_name": "Dinner Side: Frozen Roti",
+    "calories": 130,
+    "nutrition": {
+      "protein_g": 3.0,
+      "carbs_g": 21.0,
+      "fat_g": 4.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Final calorie addition."
+  },
+  {
+    "logged_at": "2026-01-30T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie (Oats, Whey, Nuts)",
+    "calories": 722,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 78.0,
+      "fat_g": 26.0,
+      "fiber_g": 16.5
+    },
+    "notes": "High fiber start; nuts for healthy fats"
+  },
+  {
+    "logged_at": "2026-01-30T12:00:00+00:00",
+    "meal_name": "Lunch & Snacks (Chicken, Whey, Cheesecake)",
+    "calories": 912,
+    "nutrition": {
+      "protein_g": 131.0,
+      "carbs_g": 30.0,
+      "fat_g": 27.0,
+      "fiber_g": 1.5
+    },
+    "notes": "Massive protein intake; small treat included"
+  },
+  {
+    "logged_at": "2026-01-30T12:00:00+00:00",
+    "meal_name": "Evening Fiber Smoothie (Yogurt, Chia)",
+    "calories": 262,
+    "nutrition": {
+      "protein_g": 28.0,
+      "carbs_g": 22.0,
+      "fat_g": 8.5,
+      "fiber_g": 12.0
+    },
+    "notes": "\"Fiber Swap\" adjustment to hit 30g target"
+  },
+  {
+    "logged_at": "2026-02-01T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie",
+    "calories": 685,
+    "nutrition": {
+      "protein_g": 43.0,
+      "carbs_g": 64.0,
+      "fat_g": 30.0,
+      "fiber_g": 14.0
+    },
+    "notes": "Excellent fiber and healthy fats; high micronutrient density."
+  },
+  {
+    "logged_at": "2026-02-01T12:00:00+00:00",
+    "meal_name": "Core Power Elite Shake",
+    "calories": 170,
+    "nutrition": {
+      "protein_g": 26.0,
+      "carbs_g": 6.0,
+      "fat_g": 4.5,
+      "fiber_g": 1.0
+    },
+    "notes": "High efficiency protein; convenient post-workout source."
+  },
+  {
+    "logged_at": "2026-02-01T12:00:00+00:00",
+    "meal_name": "Hotpot Dinner",
+    "calories": 910,
+    "nutrition": {
+      "protein_g": 65.0,
+      "carbs_g": 38.0,
+      "fat_g": 55.0,
+      "fiber_g": 6.0
+    },
+    "notes": "High protein volume, but significant hidden oil and very high sodium."
+  },
+  {
+    "logged_at": "2026-02-01T12:00:00+00:00",
+    "meal_name": "Mochi Ice Creams",
+    "calories": 250,
+    "nutrition": {
+      "protein_g": 3.0,
+      "carbs_g": 42.0,
+      "fat_g": 8.0,
+      "fiber_g": 0.0
+    },
+    "notes": "High sugar content; pushed daily calories over target."
+  },
+  {
+    "logged_at": "2026-02-02T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie",
+    "calories": 722,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 78.6,
+      "fat_g": 26.3,
+      "fiber_g": 15.5
+    },
+    "notes": "High fiber and healthy fats"
+  },
+  {
+    "logged_at": "2026-02-02T12:00:00+00:00",
+    "meal_name": "Shawarma Dinner",
+    "calories": 500,
+    "nutrition": {
+      "protein_g": 68.0,
+      "carbs_g": 31.0,
+      "fat_g": 12.7,
+      "fiber_g": 7.0
+    },
+    "notes": "Lean protein focus"
+  },
+  {
+    "logged_at": "2026-02-02T12:00:00+00:00",
+    "meal_name": "Buffet/Social",
+    "calories": 880,
+    "nutrition": {
+      "protein_g": 24.0,
+      "carbs_g": 112.5,
+      "fat_g": 38.5,
+      "fiber_g": 7.7
+    },
+    "notes": "High sugar/sodium from pizza & dessert"
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Chicken Florentine Soup & Roll",
+    "calories": 430,
+    "nutrition": {
+      "protein_g": 38.0,
+      "carbs_g": 30.0,
+      "fat_g": 15.0,
+      "fiber_g": 5.0
+    },
+    "notes": "Conservative estimate on mixed stewed meat."
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Morning Smoothie (Syntha-6)",
+    "calories": 705,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 81.0,
+      "fat_g": 24.0,
+      "fiber_g": 15.0
+    },
+    "notes": "High calorie/fiber load. Syntha-6 adds fats/carbs."
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Shrimp Stir-Fry w/ Veggies",
+    "calories": 420,
+    "nutrition": {
+      "protein_g": 59.0,
+      "carbs_g": 12.0,
+      "fat_g": 15.0,
+      "fiber_g": 5.0
+    },
+    "notes": "280g raw shrimp. Groundnut oil for healthy fats."
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Greek Yogurt & Walnuts",
+    "calories": 180,
+    "nutrition": {
+      "protein_g": 24.0,
+      "carbs_g": 9.0,
+      "fat_g": 5.0,
+      "fiber_g": 0.5
+    },
+    "notes": "Casein protein for overnight recovery."
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Psyllium Husk Supplement",
+    "calories": 18,
+    "nutrition": {
+      "protein_g": 0.0,
+      "carbs_g": 4.0,
+      "fat_g": 0.0,
+      "fiber_g": 4.0
+    },
+    "notes": "Pure soluble fiber to hit daily target."
+  },
+  {
+    "logged_at": "2026-02-03T12:00:00+00:00",
+    "meal_name": "Biryani & Shawarma Bites",
+    "calories": 115,
+    "nutrition": {
+      "protein_g": 8.0,
+      "carbs_g": 11.0,
+      "fat_g": 5.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Small portion to fill calorie gap."
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie (Oats, Whey, Nuts, Cocoa, Chia)",
+    "calories": 729,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 81.0,
+      "fat_g": 27.5,
+      "fiber_g": 16.3
+    },
+    "notes": "High fiber start, Omega-3s from walnuts/chia"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Snack: Popcorn (White Cheddar/Cinnamon)",
+    "calories": 140,
+    "nutrition": {
+      "protein_g": 2.0,
+      "carbs_g": 16.0,
+      "fat_g": 8.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Moderate sugar/sodium"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Lunch: Grilled Salmon (4oz)",
+    "calories": 233,
+    "nutrition": {
+      "protein_g": 25.0,
+      "carbs_g": 0.0,
+      "fat_g": 14.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Excellent EPA/DHA Omega-3s"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Green Tea",
+    "calories": 2,
+    "nutrition": {
+      "protein_g": 0.0,
+      "carbs_g": 0.0,
+      "fat_g": 0.0,
+      "fiber_g": 0.0
+    },
+    "notes": "High catechins (EGCG)"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Dinner: Chicken Breast Curry",
+    "calories": 276,
+    "nutrition": {
+      "protein_g": 44.0,
+      "carbs_g": 4.0,
+      "fat_g": 8.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Lean protein source, turmeric (anti-inflammatory)"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Snack: BSN Syntha-6 Whey",
+    "calories": 200,
+    "nutrition": {
+      "protein_g": 22.0,
+      "carbs_g": 15.0,
+      "fat_g": 6.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Protein boost"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Night Snack: Yogurt, Chia, Cocoa Smoothie",
+    "calories": 216,
+    "nutrition": {
+      "protein_g": 28.0,
+      "carbs_g": 18.5,
+      "fat_g": 5.0,
+      "fiber_g": 7.1
+    },
+    "notes": "Slow-digesting casein for sleep"
+  },
+  {
+    "logged_at": "2026-02-04T12:00:00+00:00",
+    "meal_name": "Supplement: Psyllium Husk (Water)",
+    "calories": 18,
+    "nutrition": {
+      "protein_g": 0.0,
+      "carbs_g": 4.0,
+      "fat_g": 0.0,
+      "fiber_g": 3.8
+    },
+    "notes": "Soluble fiber to hit daily target"
+  },
+  {
+    "logged_at": "2026-02-05T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie + Supps",
+    "calories": 747,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 81.5,
+      "fat_g": 28.4,
+      "fiber_g": 22.0
+    },
+    "notes": "High fiber start (Oats/Chia). High Omega-3s."
+  },
+  {
+    "logged_at": "2026-02-05T12:00:00+00:00",
+    "meal_name": "Lunch - Egg Bhurji & Rice",
+    "calories": 568,
+    "nutrition": {
+      "protein_g": 28.5,
+      "carbs_g": 42.5,
+      "fat_g": 30.0,
+      "fiber_g": 4.0
+    },
+    "notes": "High fat due to oil/yolks. Good protein quality."
+  },
+  {
+    "logged_at": "2026-02-05T12:00:00+00:00",
+    "meal_name": "Dinner - Dal Khichadi & Sides",
+    "calories": 824,
+    "nutrition": {
+      "protein_g": 30.0,
+      "carbs_g": 121.0,
+      "fat_g": 25.5,
+      "fiber_g": 16.5
+    },
+    "notes": "Calorie dense. Excellent fiber, but pushed total carbs high."
+  },
+  {
+    "logged_at": "2026-02-06T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie + Supps",
+    "calories": 727,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 78.5,
+      "fat_g": 27.0,
+      "fiber_g": 15.5
+    },
+    "notes": "High Omega-3s & Iron load"
+  },
+  {
+    "logged_at": "2026-02-06T12:00:00+00:00",
+    "meal_name": "Airfried Chicken w/ Honey Sriracha",
+    "calories": 419,
+    "nutrition": {
+      "protein_g": 69.0,
+      "carbs_g": 22.0,
+      "fat_g": 4.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Lean protein; Sugar from honey"
+  },
+  {
+    "logged_at": "2026-02-06T12:00:00+00:00",
+    "meal_name": "Snack: Syntha-6 Scoop",
+    "calories": 200,
+    "nutrition": {
+      "protein_g": 22.0,
+      "carbs_g": 15.0,
+      "fat_g": 6.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Protein top-up"
+  },
+  {
+    "logged_at": "2026-02-06T12:00:00+00:00",
+    "meal_name": "Trattoria Demi (Salmon/Cheese/Wine)",
+    "calories": 1160,
+    "nutrition": {
+      "protein_g": 64.0,
+      "carbs_g": 92.0,
+      "fat_g": 52.0,
+      "fiber_g": 12.0
+    },
+    "notes": "Surplus cal; Beans saved fiber goal"
+  },
+  {
+    "logged_at": "2026-02-07T12:00:00+00:00",
+    "meal_name": "BSN Syntha-6 (1.5 Scoops)",
+    "calories": 285,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 21.0,
+      "fat_g": 7.5,
+      "fiber_g": 9.0
+    },
+    "notes": "Strong fiber start; slightly higher carb for whey"
+  },
+  {
+    "logged_at": "2026-02-07T12:00:00+00:00",
+    "meal_name": "Supplements (Fish Oil + Multi)",
+    "calories": 10,
+    "nutrition": {
+      "protein_g": 0.0,
+      "carbs_g": 0.0,
+      "fat_g": 1.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Micro insurance policy"
+  },
+  {
+    "logged_at": "2026-02-07T12:00:00+00:00",
+    "meal_name": "Friend's Breakfast (Poha, Toast, Fruit)",
+    "calories": 660,
+    "nutrition": {
+      "protein_g": 14.0,
+      "carbs_g": 92.0,
+      "fat_g": 25.0,
+      "fiber_g": 14.0
+    },
+    "notes": "High carb/social meal; triggered recomp adjustment"
+  },
+  {
+    "logged_at": "2026-02-07T12:00:00+00:00",
+    "meal_name": "Dinner Stack (Chicken, Shrimp, Yogurt, Chia)",
+    "calories": 732,
+    "nutrition": {
+      "protein_g": 122.5,
+      "carbs_g": 26.0,
+      "fat_g": 14.5,
+      "fiber_g": 7.5
+    },
+    "notes": "Massive protein correction; 3/4 chicken portion"
+  },
+  {
+    "logged_at": "2026-02-08T12:00:00+00:00",
+    "meal_name": "Chickpea Curry, Rice & Carrots",
+    "calories": 445,
+    "nutrition": {
+      "protein_g": 16.5,
+      "carbs_g": 73.0,
+      "fat_g": 12.0,
+      "fiber_g": 13.8
+    },
+    "notes": "High fiber start; heavy carbs."
+  },
+  {
+    "logged_at": "2026-02-08T12:00:00+00:00",
+    "meal_name": "Morning Smoothie (Oats/Nuts/Orgain)",
+    "calories": 567,
+    "nutrition": {
+      "protein_g": 35.0,
+      "carbs_g": 73.0,
+      "fat_g": 20.5,
+      "fiber_g": 18.0
+    },
+    "notes": "Excellent micronutrients (Iron/Magnesium)."
+  },
+  {
+    "logged_at": "2026-02-08T12:00:00+00:00",
+    "meal_name": "Greek Yogurt Kadhi w/ Ghee",
+    "calories": 310,
+    "nutrition": {
+      "protein_g": 27.0,
+      "carbs_g": 16.5,
+      "fat_g": 15.0,
+      "fiber_g": 1.5
+    },
+    "notes": "Smart low-carb pivot for lunch."
+  },
+  {
+    "logged_at": "2026-02-08T12:00:00+00:00",
+    "meal_name": "Air Fried Chicken Breast (Soy)",
+    "calories": 405,
+    "nutrition": {
+      "protein_g": 77.0,
+      "carbs_g": 2.0,
+      "fat_g": 8.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Massive protein correction meal."
+  },
+  {
+    "logged_at": "2026-02-08T12:00:00+00:00",
+    "meal_name": "Roasted Makhana (15 pcs)",
+    "calories": 50,
+    "nutrition": {
+      "protein_g": 1.0,
+      "carbs_g": 8.0,
+      "fat_g": 2.0,
+      "fiber_g": 0.5
+    },
+    "notes": "Low-cal volume snack."
+  },
+  {
+    "logged_at": "2026-02-09T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie + Supps",
+    "calories": 710,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 79.0,
+      "fat_g": 25.7,
+      "fiber_g": 23.0
+    },
+    "notes": "High Omega-3 start; great fiber base from oats/chia"
+  },
+  {
+    "logged_at": "2026-02-09T12:00:00+00:00",
+    "meal_name": "Snack: Brownie",
+    "calories": 110,
+    "nutrition": {
+      "protein_g": 1.5,
+      "carbs_g": 15.0,
+      "fat_g": 5.5,
+      "fiber_g": 0.5
+    },
+    "notes": "Sugar spike; empty calories"
+  },
+  {
+    "logged_at": "2026-02-09T12:00:00+00:00",
+    "meal_name": "Post-Workout: Chicken + Grilled Cheese",
+    "calories": 864,
+    "nutrition": {
+      "protein_g": 89.0,
+      "carbs_g": 44.0,
+      "fat_g": 35.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Massive anabolic meal; high sodium for rehydration"
+  },
+  {
+    "logged_at": "2026-02-09T12:00:00+00:00",
+    "meal_name": "Night Snack: Yogurt + Berries + Psyllium",
+    "calories": 218,
+    "nutrition": {
+      "protein_g": 23.5,
+      "carbs_g": 29.0,
+      "fat_g": 0.3,
+      "fiber_g": 13.0
+    },
+    "notes": "Casein for overnight repair; huge fiber closer"
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie (Oats, Syntha-6, Nuts, Chia)",
+    "calories": 703,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 79.0,
+      "fat_g": 25.5,
+      "fiber_g": 24.0
+    },
+    "notes": "High fiber start; strong fats."
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Lunch: Tofu, Soup, Roll",
+    "calories": 525,
+    "nutrition": {
+      "protein_g": 39.0,
+      "carbs_g": 50.0,
+      "fat_g": 21.0,
+      "fiber_g": 5.5
+    },
+    "notes": "High sodium; caused bloating."
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Dinner: Air-Fried Chicken Breast",
+    "calories": 205,
+    "nutrition": {
+      "protein_g": 39.0,
+      "carbs_g": 0.0,
+      "fat_g": 4.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Lean protein correction."
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Evening: Raita, Soya Chunks, Rice",
+    "calories": 282,
+    "nutrition": {
+      "protein_g": 16.0,
+      "carbs_g": 41.0,
+      "fat_g": 4.5,
+      "fiber_g": 4.0
+    },
+    "notes": "Gut-friendly recovery meal."
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Late Snack: Greek Yogurt, Strawberry, Honey",
+    "calories": 181,
+    "nutrition": {
+      "protein_g": 18.5,
+      "carbs_g": 30.0,
+      "fat_g": 0.0,
+      "fiber_g": 1.6
+    },
+    "notes": "Casein for overnight repair."
+  },
+  {
+    "logged_at": "2026-02-10T12:00:00+00:00",
+    "meal_name": "Supplements (Fish Oil, Multi)",
+    "calories": 10,
+    "nutrition": {
+      "protein_g": 0.0,
+      "carbs_g": 0.0,
+      "fat_g": 1.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Omega-3 balance."
+  },
+  {
+    "logged_at": "2026-02-12T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 755,
+    "nutrition": {
+      "protein_g": 48.0,
+      "carbs_g": 77.0,
+      "fat_g": 28.5,
+      "fiber_g": 24.5
+    },
+    "notes": "Massive fiber start; Omega-3s from Chia/Walnuts"
+  },
+  {
+    "logged_at": "2026-02-12T12:00:00+00:00",
+    "meal_name": "Snack (Greek Yogurt & Grapes)",
+    "calories": 176,
+    "nutrition": {
+      "protein_g": 17.0,
+      "carbs_g": 27.0,
+      "fat_g": 0.0,
+      "fiber_g": 1.0
+    },
+    "notes": "High volume, low calorie"
+  },
+  {
+    "logged_at": "2026-02-12T12:00:00+00:00",
+    "meal_name": "Lunch (Chicken Breast & Gobi)",
+    "calories": 250,
+    "nutrition": {
+      "protein_g": 40.0,
+      "carbs_g": 9.0,
+      "fat_g": 6.0,
+      "fiber_g": 3.0
+    },
+    "notes": "Pure lean protein source"
+  },
+  {
+    "logged_at": "2026-02-12T12:00:00+00:00",
+    "meal_name": "Dinner (Shrimp & Ghee)",
+    "calories": 290,
+    "nutrition": {
+      "protein_g": 40.0,
+      "carbs_g": 0.0,
+      "fat_g": 15.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Hit fat minimums; High sodium warning"
+  },
+  {
+    "logged_at": "2026-02-12T12:00:00+00:00",
+    "meal_name": "Side Dish (Toor Dal - 2 Servings)",
+    "calories": 230,
+    "nutrition": {
+      "protein_g": 12.5,
+      "carbs_g": 35.0,
+      "fat_g": 6.3,
+      "fiber_g": 7.5
+    },
+    "notes": "Legume fiber boost"
+  },
+  {
+    "logged_at": "2026-02-16T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie + Supps",
+    "calories": 710,
+    "nutrition": {
+      "protein_g": 47.2,
+      "carbs_g": 79.0,
+      "fat_g": 25.7,
+      "fiber_g": 23.2
+    },
+    "notes": "High Omega-3s; Great start."
+  },
+  {
+    "logged_at": "2026-02-16T12:00:00+00:00",
+    "meal_name": "Cafeteria Chicken Box",
+    "calories": 590,
+    "nutrition": {
+      "protein_g": 53.0,
+      "carbs_g": 46.0,
+      "fat_g": 19.5,
+      "fiber_g": 6.0
+    },
+    "notes": "High sodium; Est. portion size."
+  },
+  {
+    "logged_at": "2026-02-16T12:00:00+00:00",
+    "meal_name": "Core Power High Protein Milk",
+    "calories": 170,
+    "nutrition": {
+      "protein_g": 26.0,
+      "carbs_g": 6.0,
+      "fat_g": 4.5,
+      "fiber_g": 1.0
+    },
+    "notes": "Calcium boost; Post-snack."
+  },
+  {
+    "logged_at": "2026-02-16T12:00:00+00:00",
+    "meal_name": "Dinner: Chana, Rice, Yogurt",
+    "calories": 434,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 62.0,
+      "fat_g": 4.0,
+      "fiber_g": 10.3
+    },
+    "notes": "High fiber closer; Plant protein mix."
+  },
+  {
+    "logged_at": "2026-02-17T12:00:00+00:00",
+    "meal_name": "Breakfast: Oats, Syntha-6, Nuts, Cocoa, Chia",
+    "calories": 732,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 79.5,
+      "fat_g": 27.0,
+      "fiber_g": 23.5
+    },
+    "notes": "High fiber/Omega-3 start."
+  },
+  {
+    "logged_at": "2026-02-17T12:00:00+00:00",
+    "meal_name": "Lunch: Pita Inn Chicken (0.59lb) + Salad",
+    "calories": 702,
+    "nutrition": {
+      "protein_g": 85.0,
+      "carbs_g": 5.0,
+      "fat_g": 36.5,
+      "fiber_g": 2.0
+    },
+    "notes": "Massive protein hit. Est. high sodium."
+  },
+  {
+    "logged_at": "2026-02-17T12:00:00+00:00",
+    "meal_name": "Snack: Minute Maid OJ (12oz)",
+    "calories": 170,
+    "nutrition": {
+      "protein_g": 2.0,
+      "carbs_g": 39.0,
+      "fat_g": 0.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Sugar spike for glycogen."
+  },
+  {
+    "logged_at": "2026-02-17T12:00:00+00:00",
+    "meal_name": "Dinner: Greek Yogurt + Syntha-6 Mix",
+    "calories": 278,
+    "nutrition": {
+      "protein_g": 37.0,
+      "carbs_g": 19.0,
+      "fat_g": 5.5,
+      "fiber_g": 6.0
+    },
+    "notes": "Slow-release casein for sleep."
+  },
+  {
+    "logged_at": "2026-02-18T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie (Oats, Syntha-6 1.5, Nuts, Chia)",
+    "calories": 683,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 79.0,
+      "fat_g": 23.0,
+      "fiber_g": 23.0
+    },
+    "notes": "High fiber start; massive Calcium/Iron hit."
+  },
+  {
+    "logged_at": "2026-02-18T12:00:00+00:00",
+    "meal_name": "Lunch: Air-Fried Chicken (339g)",
+    "calories": 442,
+    "nutrition": {
+      "protein_g": 80.0,
+      "carbs_g": 6.0,
+      "fat_g": 9.0,
+      "fiber_g": 0.5
+    },
+    "notes": "Huge protein spike; very lean. High sodium marinade."
+  },
+  {
+    "logged_at": "2026-02-18T12:00:00+00:00",
+    "meal_name": "Snack: 3 Mini Oranges",
+    "calories": 120,
+    "nutrition": {
+      "protein_g": 2.0,
+      "carbs_g": 27.0,
+      "fat_g": 0.0,
+      "fiber_g": 4.0
+    },
+    "notes": "Vitamin C boost; quick energy."
+  },
+  {
+    "logged_at": "2026-02-18T12:00:00+00:00",
+    "meal_name": "Dinner/Snack: Chicken Curry, Rice, Doritos, M&Ms",
+    "calories": 525,
+    "nutrition": {
+      "protein_g": 20.5,
+      "carbs_g": 57.0,
+      "fat_g": 24.0,
+      "fiber_g": 4.0
+    },
+    "notes": "Flexible dieting meal; hit fat minimums here."
+  },
+  {
+    "logged_at": "2026-02-18T12:00:00+00:00",
+    "meal_name": "Late Snack: Syntha-6 (1 sc), Fish Oil, Multi",
+    "calories": 202,
+    "nutrition": {
+      "protein_g": 22.0,
+      "carbs_g": 14.0,
+      "fat_g": 6.2,
+      "fiber_g": 6.0
+    },
+    "notes": "Recovery cap; EPA/DHA for inflammation."
+  },
+  {
+    "logged_at": "2026-02-19T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 701,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 77.0,
+      "fat_g": 25.0,
+      "fiber_g": 23.0
+    },
+    "notes": "Massive fiber and healthy fat start; Whey/Casein blend for sustained aminos."
+  },
+  {
+    "logged_at": "2026-02-19T12:00:00+00:00",
+    "meal_name": "Shrimp, Palak Daal, Rice, Potatoes, Choc",
+    "calories": 858,
+    "nutrition": {
+      "protein_g": 76.0,
+      "carbs_g": 73.0,
+      "fat_g": 25.0,
+      "fiber_g": 7.0
+    },
+    "notes": "Huge lean protein hit; perfectly managed fat and calories via air-frying."
+  },
+  {
+    "logged_at": "2026-02-19T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken Breast (216g Raw)",
+    "calories": 259,
+    "nutrition": {
+      "protein_g": 49.0,
+      "carbs_g": 0.0,
+      "fat_g": 6.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Oil-free protein bomb to hit targets and protect the calorie deficit."
+  },
+  {
+    "logged_at": "2026-02-19T12:00:00+00:00",
+    "meal_name": "2 Small Tangerines",
+    "calories": 80,
+    "nutrition": {
+      "protein_g": 1.0,
+      "carbs_g": 20.0,
+      "fat_g": 0.0,
+      "fiber_g": 3.0
+    },
+    "notes": "Perfect low-cal sweet finish with Vit C for recovery."
+  },
+  {
+    "logged_at": "2026-02-22T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supplements",
+    "calories": 731,
+    "nutrition": {
+      "protein_g": 48.0,
+      "carbs_g": 79.3,
+      "fat_g": 26.7,
+      "fiber_g": 23.5
+    },
+    "notes": "High fiber, rich in omega-3s and complete protein"
+  },
+  {
+    "logged_at": "2026-02-22T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken Breast",
+    "calories": 510,
+    "nutrition": {
+      "protein_g": 93.5,
+      "carbs_g": 3.0,
+      "fat_g": 10.8,
+      "fiber_g": 0.5
+    },
+    "notes": "Massive lean protein hit for muscle recovery"
+  },
+  {
+    "logged_at": "2026-02-22T12:00:00+00:00",
+    "meal_name": "Cucumber & Besan Laddoo",
+    "calories": 180,
+    "nutrition": {
+      "protein_g": 3.8,
+      "carbs_g": 23.3,
+      "fat_g": 8.7,
+      "fiber_g": 2.0
+    },
+    "notes": "Hydration volume plus quick carbs/fats"
+  },
+  {
+    "logged_at": "2026-02-22T12:00:00+00:00",
+    "meal_name": "Paneer Curry & Rice",
+    "calories": 486,
+    "nutrition": {
+      "protein_g": 22.4,
+      "carbs_g": 36.2,
+      "fat_g": 25.8,
+      "fiber_g": 1.9
+    },
+    "notes": "Slow-digesting casein protein, lycopene from curry"
+  },
+  {
+    "logged_at": "2026-02-23T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 724,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 79.5,
+      "fat_g": 26.5,
+      "fiber_g": 23.3
+    },
+    "notes": "Great morning fiber & Omega-3s."
+  },
+  {
+    "logged_at": "2026-02-23T12:00:00+00:00",
+    "meal_name": "Pesto di Parma Sandwich",
+    "calories": 940,
+    "nutrition": {
+      "protein_g": 56.0,
+      "carbs_g": 69.0,
+      "fat_g": 46.0,
+      "fiber_g": 3.0
+    },
+    "notes": "High sodium (2020mg) & saturated fat."
+  },
+  {
+    "logged_at": "2026-02-23T12:00:00+00:00",
+    "meal_name": "Syntha-6 & Greek Yogurt",
+    "calories": 320,
+    "nutrition": {
+      "protein_g": 45.0,
+      "carbs_g": 23.0,
+      "fat_g": 5.0,
+      "fiber_g": 6.0
+    },
+    "notes": "Excellent high-protein, low-fat finisher."
+  },
+  {
+    "logged_at": "2026-02-25T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie",
+    "calories": 707,
+    "nutrition": {
+      "protein_g": 47.0,
+      "carbs_g": 77.0,
+      "fat_g": 24.5,
+      "fiber_g": 24.0
+    },
+    "notes": "High fiber start, balanced fats."
+  },
+  {
+    "logged_at": "2026-02-25T12:00:00+00:00",
+    "meal_name": "Salmon Poke Bowl",
+    "calories": 490,
+    "nutrition": {
+      "protein_g": 31.0,
+      "carbs_g": 19.0,
+      "fat_g": 32.0,
+      "fiber_g": 8.5
+    },
+    "notes": "Low carb choice, excellent Omega-3s."
+  },
+  {
+    "logged_at": "2026-02-25T12:00:00+00:00",
+    "meal_name": "Post-Workout Shake",
+    "calories": 190,
+    "nutrition": {
+      "protein_g": 22.0,
+      "carbs_g": 14.0,
+      "fat_g": 5.0,
+      "fiber_g": 6.0
+    },
+    "notes": "Quick recovery amino acids."
+  },
+  {
+    "logged_at": "2026-02-25T12:00:00+00:00",
+    "meal_name": "Chutney Chicken & Rice",
+    "calories": 691,
+    "nutrition": {
+      "protein_g": 92.5,
+      "carbs_g": 34.0,
+      "fat_g": 12.3,
+      "fiber_g": 2.5
+    },
+    "notes": "Massive protein hit, lean prep."
+  },
+  {
+    "logged_at": "2026-02-25T12:00:00+00:00",
+    "meal_name": "1/2 CFA Cookie",
+    "calories": 180,
+    "nutrition": {
+      "protein_g": 2.0,
+      "carbs_g": 24.0,
+      "fat_g": 9.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Late night sugar hit, managed well."
+  },
+  {
+    "logged_at": "2026-03-05T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 711,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 77.4,
+      "fat_g": 25.6,
+      "fiber_g": 23.2
+    },
+    "notes": "High fiber, strong Omega-3 & whey/casein start"
+  },
+  {
+    "logged_at": "2026-03-05T12:00:00+00:00",
+    "meal_name": "Sriracha Soy Chicken & Beans",
+    "calories": 522,
+    "nutrition": {
+      "protein_g": 76.5,
+      "carbs_g": 18.0,
+      "fat_g": 14.3,
+      "fiber_g": 5.0
+    },
+    "notes": "Massive lean protein, very high sodium"
+  },
+  {
+    "logged_at": "2026-03-05T12:00:00+00:00",
+    "meal_name": "3 Boiled Eggs",
+    "calories": 216,
+    "nutrition": {
+      "protein_g": 18.9,
+      "carbs_g": 1.2,
+      "fat_g": 14.4,
+      "fiber_g": 0.0
+    },
+    "notes": "Highly bioavailable protein, healthy fats"
+  },
+  {
+    "logged_at": "2026-03-05T12:00:00+00:00",
+    "meal_name": "Evening Protein Shake",
+    "calories": 285,
+    "nutrition": {
+      "protein_g": 33.0,
+      "carbs_g": 21.0,
+      "fat_g": 7.5,
+      "fiber_g": 9.0
+    },
+    "notes": "Slow-digesting casein for overnight recovery"
+  },
+  {
+    "logged_at": "2026-03-05T12:00:00+00:00",
+    "meal_name": "Half Pack of Chips",
+    "calories": 80,
+    "nutrition": {
+      "protein_g": 0.5,
+      "carbs_g": 7.5,
+      "fat_g": 5.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Excellent portion control, slight carb/fat bump"
+  },
+  {
+    "logged_at": "2026-03-07T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 731,
+    "nutrition": {
+      "protein_g": 47.5,
+      "carbs_g": 78.5,
+      "fat_g": 26.9,
+      "fiber_g": 23.3
+    },
+    "notes": "Huge fiber & omega-3 start; great complex carbs for energy."
+  },
+  {
+    "logged_at": "2026-03-07T12:00:00+00:00",
+    "meal_name": "\"Flying Down to Rio\" Turkey Sandwich",
+    "calories": 450,
+    "nutrition": {
+      "protein_g": 25.0,
+      "carbs_g": 50.0,
+      "fat_g": 14.0,
+      "fiber_g": 5.0
+    },
+    "notes": "Good protein on the go, but high sodium (1600mg) from deli meat."
+  },
+  {
+    "logged_at": "2026-03-07T12:00:00+00:00",
+    "meal_name": "Cortado & Espresso Macchiato",
+    "calories": 50,
+    "nutrition": {
+      "protein_g": 2.5,
+      "carbs_g": 3.7,
+      "fat_g": 2.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Clean caffeine boost; zero added sugar."
+  },
+  {
+    "logged_at": "2026-03-07T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken Breast & Baby Carrots",
+    "calories": 371,
+    "nutrition": {
+      "protein_g": 63.5,
+      "carbs_g": 8.0,
+      "fat_g": 7.3,
+      "fiber_g": 2.5
+    },
+    "notes": "Massive lean protein hit; high beta-carotene for recovery."
+  },
+  {
+    "logged_at": "2026-03-07T12:00:00+00:00",
+    "meal_name": "Greek Yogurt Protein Blend & Oranges",
+    "calories": 283,
+    "nutrition": {
+      "protein_g": 27.5,
+      "carbs_g": 29.5,
+      "fat_g": 6.5,
+      "fiber_g": 4.0
+    },
+    "notes": "Perfect slow-digesting casein for overnight muscle repair."
+  },
+  {
+    "logged_at": "2026-03-11T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 900,
+    "nutrition": {
+      "protein_g": 62.0,
+      "carbs_g": 93.0,
+      "fat_g": 34.5,
+      "fiber_g": 33.0
+    },
+    "notes": "Massive start, high fiber, rich in Omega-3s"
+  },
+  {
+    "logged_at": "2026-03-11T12:00:00+00:00",
+    "meal_name": "Air-Fried Soy Chicken Breast",
+    "calories": 390,
+    "nutrition": {
+      "protein_g": 72.0,
+      "carbs_g": 2.0,
+      "fat_g": 8.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Ultra-lean protein bomb, high sodium from soy"
+  },
+  {
+    "logged_at": "2026-03-11T12:00:00+00:00",
+    "meal_name": "Chocolate Cake (2x2)",
+    "calories": 150,
+    "nutrition": {
+      "protein_g": 2.0,
+      "carbs_g": 20.0,
+      "fat_g": 7.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Macro-friendly treat, fits recomp plan perfectly"
+  },
+  {
+    "logged_at": "2026-03-11T12:00:00+00:00",
+    "meal_name": "2% Greek Yogurt (250g)",
+    "calories": 176,
+    "nutrition": {
+      "protein_g": 25.0,
+      "carbs_g": 7.0,
+      "fat_g": 5.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Perfect slow-digesting casein for overnight recovery"
+  },
+  {
+    "logged_at": "2026-03-12T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 732,
+    "nutrition": {
+      "protein_g": 49.0,
+      "carbs_g": 81.0,
+      "fat_g": 27.0,
+      "fiber_g": 25.0
+    },
+    "notes": "Massive fiber and Omega-3s start"
+  },
+  {
+    "logged_at": "2026-03-12T12:00:00+00:00",
+    "meal_name": "JJ Turkey Sandwich (No Bacon)",
+    "calories": 600,
+    "nutrition": {
+      "protein_g": 28.0,
+      "carbs_g": 55.0,
+      "fat_g": 30.0,
+      "fiber_g": 4.0
+    },
+    "notes": "High sodium deli meat, solid workout carbs"
+  },
+  {
+    "logged_at": "2026-03-12T12:00:00+00:00",
+    "meal_name": "Dymatize ISO100 (1 Scoop)",
+    "calories": 120,
+    "nutrition": {
+      "protein_g": 25.0,
+      "carbs_g": 2.0,
+      "fat_g": 0.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Perfect lean protein bridge"
+  },
+  {
+    "logged_at": "2026-03-12T12:00:00+00:00",
+    "meal_name": "Aloo Paratha",
+    "calories": 240,
+    "nutrition": {
+      "protein_g": 6.0,
+      "carbs_g": 36.0,
+      "fat_g": 8.0,
+      "fiber_g": 3.0
+    },
+    "notes": "Good complex carb energy, low protein"
+  },
+  {
+    "logged_at": "2026-03-12T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken Breast",
+    "calories": 317,
+    "nutrition": {
+      "protein_g": 66.0,
+      "carbs_g": 0.0,
+      "fat_g": 4.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Textbook recomp pure protein closer"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supps",
+    "calories": 782,
+    "nutrition": {
+      "protein_g": 57.5,
+      "carbs_g": 84.9,
+      "fat_g": 25.6,
+      "fiber_g": 25.0
+    },
+    "notes": "Massive fiber & complete protein start"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "FAGE 2% Yogurt Kadhi & Rice",
+    "calories": 342,
+    "nutrition": {
+      "protein_g": 29.1,
+      "carbs_g": 37.6,
+      "fat_g": 8.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Great probiotic dairy source"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "Matar Paneer & Rice",
+    "calories": 255,
+    "nutrition": {
+      "protein_g": 11.3,
+      "carbs_g": 26.3,
+      "fat_g": 11.6,
+      "fiber_g": 4.6
+    },
+    "notes": "Solid veg meal; high calcium"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "Air Fried Chicken Breast",
+    "calories": 280,
+    "nutrition": {
+      "protein_g": 54.0,
+      "carbs_g": 5.0,
+      "fat_g": 5.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Lean protein macro-saver"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "KIND Bar Minis (x2)",
+    "calories": 180,
+    "nutrition": {
+      "protein_g": 6.0,
+      "carbs_g": 16.0,
+      "fat_g": 14.0,
+      "fiber_g": 6.0
+    },
+    "notes": "Good healthy fats & crunch"
+  },
+  {
+    "logged_at": "2026-03-13T12:00:00+00:00",
+    "meal_name": "10 Almonds",
+    "calories": 70,
+    "nutrition": {
+      "protein_g": 2.5,
+      "carbs_g": 2.5,
+      "fat_g": 6.0,
+      "fiber_g": 1.5
+    },
+    "notes": "Perfect macro capstone to hit 160g"
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Breakfast (Eggs, Dosas, Oil)",
+    "calories": 420,
+    "nutrition": {
+      "protein_g": 16.0,
+      "carbs_g": 31.0,
+      "fat_g": 26.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Great start, high bioavailable protein."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Nurri Vanilla Shake",
+    "calories": 150,
+    "nutrition": {
+      "protein_g": 30.0,
+      "carbs_g": 2.0,
+      "fat_g": 2.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Elite recomp hack, 30g pure protein."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Air-Fried Chicken (305g raw)",
+    "calories": 366,
+    "nutrition": {
+      "protein_g": 69.0,
+      "carbs_g": 0.0,
+      "fat_g": 8.0,
+      "fiber_g": 0.0
+    },
+    "notes": "Massive ultra-lean protein hit."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Lunch (Rice, Pappu, Sabji)",
+    "calories": 306,
+    "nutrition": {
+      "protein_g": 10.5,
+      "carbs_g": 60.0,
+      "fat_g": 2.0,
+      "fiber_g": 8.5
+    },
+    "notes": "Complex carbs & best fiber source today."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Dondakaya Pachadi (1.5 tbsp)",
+    "calories": 130,
+    "nutrition": {
+      "protein_g": 0.5,
+      "carbs_g": 3.0,
+      "fat_g": 14.0,
+      "fiber_g": 1.0
+    },
+    "notes": "High oil content, pushed fat to target."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Ginger Tea (no sugar)",
+    "calories": 30,
+    "nutrition": {
+      "protein_g": 1.5,
+      "carbs_g": 2.5,
+      "fat_g": 1.5,
+      "fiber_g": 0.0
+    },
+    "notes": "Solid anti-inflammatory benefits."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Fairlife Protein Shake",
+    "calories": 150,
+    "nutrition": {
+      "protein_g": 30.0,
+      "carbs_g": 4.0,
+      "fat_g": 2.5,
+      "fiber_g": 1.0
+    },
+    "notes": "Late night calcium and protein for recovery."
+  },
+  {
+    "logged_at": "2026-03-19T12:00:00+00:00",
+    "meal_name": "Temple Prasadam & Irani Chai",
+    "calories": 420,
+    "nutrition": {
+      "protein_g": 8.0,
+      "carbs_g": 51.0,
+      "fat_g": 20.0,
+      "fiber_g": 3.0
+    },
+    "notes": "Heavy on carbs/fat, but fit the calorie buffer perfectly."
+  },
+  {
+    "logged_at": "2026-04-06T12:00:00+00:00",
+    "meal_name": "Breakfast Smoothie & Supplements",
+    "calories": 793,
+    "nutrition": {
+      "protein_g": 58.0,
+      "carbs_g": 85.0,
+      "fat_g": 27.0,
+      "fiber_g": 26.0
+    },
+    "notes": "Massive fiber hit; complete whey protein and high omega-3s."
+  },
+  {
+    "logged_at": "2026-04-06T12:00:00+00:00",
+    "meal_name": "Orgain Protein Shake",
+    "calories": 160,
+    "nutrition": {
+      "protein_g": 30.0,
+      "carbs_g": 7.0,
+      "fat_g": 3.0,
+      "fiber_g": 2.0
+    },
+    "notes": "Clean, low-calorie liquid protein top-off."
+  },
+  {
+    "logged_at": "2026-04-06T12:00:00+00:00",
+    "meal_name": "Prawn Curry & Egg Whites",
+    "calories": 630,
+    "nutrition": {
+      "protein_g": 66.0,
+      "carbs_g": 52.0,
+      "fat_g": 16.0,
+      "fiber_g": 3.0
+    },
+    "notes": "High-yield complete protein (seafood/egg/dairy); lean macro profile."
+  },
+  {
+    "logged_at": "2026-04-06T12:00:00+00:00",
+    "meal_name": "Yogurt, Walnuts & Honey",
+    "calories": 174,
+    "nutrition": {
+      "protein_g": 12.0,
+      "carbs_g": 12.0,
+      "fat_g": 10.0,
+      "fiber_g": 1.0
+    },
+    "notes": "Perfect overnight casein source with heart-healthy fats."
+  }
+]
