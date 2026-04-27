@@ -59,7 +59,7 @@ export function TodayPanel({ refreshKey }: TodayPanelProps) {
       className="flex flex-col h-full overflow-y-auto scrollbar-thin"
       style={{ backgroundColor: 'var(--color-surface-container-low)' }}
     >
-      <div className="p-8 lg:p-10 space-y-8 max-w-2xl mx-auto w-full">
+      <div className="p-4 md:p-8 lg:p-10 space-y-5 md:space-y-8 max-w-2xl mx-auto w-full">
 
         {/* ── Date header ───────────────────────────────────────────── */}
         <div className="flex justify-between items-end">

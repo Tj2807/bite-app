@@ -2,9 +2,14 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { ChatMessage, LoggedMealCard } from '@/types';
+import { TabToggle } from '@/app/(app)/log/page';
+
+type MobileTab = 'chat' | 'today';
 
 interface ChatPanelProps {
   onMealLogged: () => void;
+  mobileTab?: MobileTab;
+  onTabChange?: (tab: MobileTab) => void;
 }
 
 const WELCOME: ChatMessage = {
@@ -14,7 +19,7 @@ const WELCOME: ChatMessage = {
   created_at: new Date().toISOString(),
 };
 
-export function ChatPanel({ onMealLogged }: ChatPanelProps) {
+export function ChatPanel({ onMealLogged, mobileTab, onTabChange }: ChatPanelProps) {
   const [messages, setMessages]     = useState<ChatMessage[]>([WELCOME]);
   const [input, setInput]           = useState('');
   const [loading, setLoading]       = useState(false);
@@ -109,36 +114,42 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
 
       {/* ── Chat Header ──────────────────────────────────────────────────── */}
       <div
-        className="px-8 py-5 flex items-center gap-4 shrink-0"
+        className="px-4 md:px-8 py-4 md:py-5 flex items-center gap-3 shrink-0"
         style={{
           borderBottom: '1px solid rgba(193,200,194,0.2)',
           backgroundColor: 'var(--color-surface-bright)',
         }}
       >
         <div
-          className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0"
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0"
           style={{ border: '2px solid var(--color-primary-fixed)', backgroundColor: '#F5F1E6' }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="Bite" width={48} height={48} className="w-full h-full object-cover p-1" />
         </div>
-        <div>
+        <div className="flex-1 min-w-0">
           <h2 className="text-headline-sm" style={{ color: 'var(--color-primary)' }}>Bite Assistant</h2>
           <p className="text-label-sm flex items-center gap-1.5" style={{ color: 'var(--color-on-surface-variant)' }}>
             <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: 'var(--color-secondary-fixed)' }} />
             Mindful guide active
           </p>
         </div>
+        {/* Chat / Today toggle — mobile only */}
+        {onTabChange && mobileTab && (
+          <div className="md:hidden flex-shrink-0">
+            <TabToggle tab={mobileTab} onTabChange={onTabChange} />
+          </div>
+        )}
       </div>
 
       {/* ── Messages ─────────────────────────────────────────────────────── */}
       <div
-        className="flex-1 overflow-y-auto p-8 space-y-6 scrollbar-thin"
+        className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-8 space-y-4 md:space-y-6 scrollbar-thin w-full"
         style={{ background: 'linear-gradient(to bottom, var(--color-surface), rgba(244,244,240,0.3))' }}
       >
         {/* History loading skeleton */}
         {!hydrated && (
-          <div className="flex gap-4 max-w-[75%]">
+          <div className="flex gap-3 max-w-[80%]">
             <div className="w-8 h-8 rounded-full flex-shrink-0 animate-pulse"
               style={{ backgroundColor: 'var(--color-surface-container-high)' }} />
             <div className="flex-1 space-y-2 pt-1">
@@ -160,7 +171,7 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
 
         {/* Typing indicator */}
         {loading && (
-          <div className="flex gap-4 max-w-[85%] animate-chat">
+          <div className="flex gap-3 max-w-[80%] animate-chat">
             <AvatarMini />
             <div
               className="py-4 px-6 rounded-2xl rounded-tl-sm flex items-center gap-2"
@@ -178,40 +189,51 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
 
       {/* ── Input ────────────────────────────────────────────────────────── */}
       <div
-        className="p-6 shrink-0"
+        className="px-3 py-3 md:px-5 md:py-4 shrink-0 flex items-end gap-3"
         style={{
           borderTop: '1px solid rgba(193,200,194,0.2)',
           backgroundColor: 'var(--color-surface)',
         }}
       >
-        <div className="relative flex items-center">
-          <input
+        {/* Text field */}
+        <div
+          className="flex-1 flex items-center rounded-3xl px-4 py-1 min-h-[48px]"
+          style={{
+            backgroundColor: 'var(--color-surface-container-high)',
+            border: '1px solid rgba(193,200,194,0.35)',
+          }}
+        >
+          <textarea
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKey}
             placeholder="Log a meal or share a thought…"
-            className="w-full rounded-full py-4 pl-6 pr-14 text-body-md transition-all"
+            rows={1}
+            className="w-full bg-transparent resize-none text-body-md py-3"
             style={{
-              backgroundColor: 'var(--color-surface-container-low)',
               border: 'none',
-              color: 'var(--color-on-surface)',
               outline: 'none',
+              color: 'var(--color-on-surface)',
               fontFamily: 'var(--font-sans)',
+              lineHeight: '1.5',
             }}
           />
-          <button
-            onClick={sendMessage}
-            disabled={!input.trim() || loading}
-            className="absolute right-2 w-10 h-10 rounded-full flex items-center justify-center transition-colors disabled:opacity-40"
-            style={{
-              backgroundColor: 'var(--color-primary)',
-              color: 'var(--color-on-primary)',
-              boxShadow: '0 2px 8px rgba(44,76,59,0.15)',
-            }}
-          >
-            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>send</span>
-          </button>
         </div>
+        {/* Send button — external, always visible */}
+        <button
+          onClick={sendMessage}
+          disabled={!input.trim() || loading}
+          className="w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-200 disabled:opacity-40 active:scale-90"
+          style={{
+            backgroundColor: 'var(--color-primary)',
+            color: 'var(--color-on-primary)',
+            boxShadow: '0 2px 10px rgba(44,76,59,0.25)',
+          }}
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: '20px', fontVariationSettings: "'FILL' 1" }}>
+            arrow_upward
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -233,17 +255,19 @@ function AvatarMini() {
 
 function AssistantBubble({ msg }: { msg: ChatMessage }) {
   return (
-    <div className="flex gap-4 max-w-[85%]">
+    <div className="flex gap-3 max-w-[88%]">
       <AvatarMini />
-      <div className="space-y-2">
+      <div className="space-y-2 min-w-0 flex-1">
         <div
-          className="py-4 px-6 rounded-2xl rounded-tl-sm text-body-md"
+          className="py-3 px-4 md:py-4 md:px-6 rounded-2xl rounded-tl-sm text-body-md"
           style={{
             backgroundColor: 'var(--color-surface-container)',
             color: 'var(--color-on-surface)',
             boxShadow: '0 2px 8px rgba(44,76,59,0.03)',
             border: '1px solid rgba(193,200,194,0.2)',
             whiteSpace: 'pre-wrap',
+            overflowWrap: 'break-word',
+            wordBreak: 'break-word',
           }}
         >
           {msg.content}
@@ -256,14 +280,16 @@ function AssistantBubble({ msg }: { msg: ChatMessage }) {
 
 function UserBubble({ content }: { content: string }) {
   return (
-    <div className="flex gap-4 max-w-[85%] ml-auto justify-end">
+    <div className="flex max-w-[80%] ml-auto justify-end">
       <div
-        className="py-4 px-6 rounded-2xl rounded-tr-sm text-body-md"
+        className="py-3 px-4 md:py-4 md:px-6 rounded-2xl rounded-tr-sm text-body-md"
         style={{
           backgroundColor: 'var(--color-primary)',
           color: 'var(--color-on-primary)',
           boxShadow: '0 2px 8px rgba(44,76,59,0.08)',
           whiteSpace: 'pre-wrap',
+          overflowWrap: 'break-word',
+          wordBreak: 'break-word',
         }}
       >
         {content}
