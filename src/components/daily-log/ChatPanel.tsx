@@ -25,7 +25,10 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
   useEffect(() => {
     async function loadHistory() {
       try {
-        const res = await fetch('/api/chat/history');
+        // Send local midnight as UTC so the server filters by the user's actual day
+        const now = new Date();
+        const localMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+        const res = await fetch(`/api/chat/history?start=${encodeURIComponent(localMidnight.toISOString())}`);
         if (!res.ok) return;
         const data: ChatMessage[] = await res.json();
         if (data.length > 0) {

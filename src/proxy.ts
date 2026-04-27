@@ -24,16 +24,21 @@ export async function proxy(request: NextRequest) {
   // Refresh session — keeps the JWT alive
   const { data: { user } } = await supabase.auth.getUser();
 
+  // Guest mode — cookie-based bypass that shows Tejas's data
+  const guestToken  = request.cookies.get('bite_guest')?.value;
+  const guestSecret = process.env.GUEST_SECRET ?? 'bite-guest-demo';
+  const isGuest     = !!process.env.GUEST_USER_ID && guestToken === guestSecret;
+
   const { pathname } = request.nextUrl;
   const protectedPaths = ['/log', '/trends', '/settings'];
   const isProtected = protectedPaths.some(p => pathname.startsWith(p));
 
-  if (isProtected && !user) {
+  if (isProtected && !user && !isGuest) {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
-  // If already logged in and hitting the landing page, go straight to /log
-  if (pathname === '/' && user) {
+  // If already logged in (or guest) and hitting the landing page, go straight to /log
+  if (pathname === '/' && (user || isGuest)) {
     return NextResponse.redirect(new URL('/log', request.url));
   }
 

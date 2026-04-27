@@ -23,6 +23,11 @@ export default function LandingPage() {
     });
   };
 
+  const handleGuest = async () => {
+    await fetch('/api/auth/guest', { method: 'POST' });
+    router.push('/log');
+  };
+
   return (
     <div
       className="min-h-full flex flex-col antialiased selection:bg-[#d7e5bb] selection:text-[#5a6745]"
@@ -110,6 +115,32 @@ export default function LandingPage() {
             </svg>
             Login to meet Bite
           </button>
+
+          {/* Secondary CTA — Guest access */}
+          <button
+            onClick={handleGuest}
+            className="mt-5 inline-flex items-center gap-2 transition-all duration-200 hover:opacity-80 cursor-pointer"
+            style={{
+              fontFamily: '"Plus Jakarta Sans", sans-serif',
+              fontSize: '13px',
+              fontWeight: 400,
+              letterSpacing: '0.04em',
+              color: 'rgba(92,94,92,0.7)',
+              background: 'none',
+              border: 'none',
+              padding: '6px 0',
+              textDecoration: 'none',
+            }}
+          >
+            <span
+              className="material-symbols-outlined"
+              style={{ fontSize: '15px', fontVariationSettings: "'FILL' 0", opacity: 0.6 }}
+            >
+              visibility
+            </span>
+            Enter as a guest
+          </button>
+
         </div>
       </main>
 
