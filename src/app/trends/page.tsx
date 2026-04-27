@@ -7,39 +7,88 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   ResponsiveContainer, Cell, ReferenceLine,
 } from 'recharts';
-import Image from 'next/image';
-import { TrendsData, Meal, DEFAULT_GOALS } from '@/types';
+import { Meal, DEFAULT_GOALS } from '@/types';
 import { getGoals } from '@/lib/goals';
 
 type Range = '7d' | '30d' | 'all';
 
+interface DaySummary {
+  date: string;
+  calories: number;
+  nutrition: { protein_g: number; carbs_g: number; fat_g: number; fiber_g: number };
+}
+
+/** Group raw meals into per-local-date summaries — timezone-correct. */
+function groupByLocalDate(meals: Meal[]): DaySummary[] {
+  const map = new Map<string, DaySummary>();
+  for (const m of meals) {
+    const localDate = new Date(m.logged_at).toLocaleDateString('en-CA');
+    if (!map.has(localDate)) {
+      map.set(localDate, { date: localDate, calories: 0, nutrition: { protein_g: 0, carbs_g: 0, fat_g: 0, fiber_g: 0 } });
+    }
+    const day = map.get(localDate)!;
+    day.calories                += m.calories ?? 0;
+    day.nutrition.protein_g     += m.nutrition?.protein_g ?? 0;
+    day.nutrition.carbs_g       += m.nutrition?.carbs_g   ?? 0;
+    day.nutrition.fat_g         += m.nutrition?.fat_g     ?? 0;
+    day.nutrition.fiber_g       += m.nutrition?.fiber_g   ?? 0;
+  }
+  return Array.from(map.values()).sort((a, b) => a.date.localeCompare(b.date));
+}
+
 export default function TrendsPage() {
-  const [data, setData]     = useState<TrendsData | null>(null);
+  const [meals, setMeals]     = useState<Meal[]>([]);
   const [loading, setLoading] = useState(true);
-  const [range, setRange]   = useState<Range>('all');
+  const [range, setRange]     = useState<Range>('all');
   const goals = getGoals();
 
   const fetchTrends = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/trends?range=${range}`);
-      setData(await res.json());
-    } catch { setData(null); }
+      const now = new Date();
+      const params = new URLSearchParams({ range });
+
+      if (range !== 'all') {
+        const days = range === '30d' ? 30 : 7;
+        // Local midnight N days ago → UTC (timezone-correct window start)
+        const fromLocal = new Date(now.getFullYear(), now.getMonth(), now.getDate() - days, 0, 0, 0, 0);
+        // End = local end of today
+        const toLocal = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+        params.set('start', fromLocal.toISOString());
+        params.set('end',   toLocal.toISOString());
+      }
+
+      const res = await fetch(`/api/trends?${params}`);
+      const json = await res.json();
+      setMeals(json.meals ?? []);
+    } catch { setMeals([]); }
     finally { setLoading(false); }
   }, [range]);
 
   useEffect(() => { fetchTrends(); }, [fetchTrends]);
 
-  const avg = data?.averages;
-  const summaries = data?.summaries ?? [];
-  const meals = data?.meals ?? [];
+  // Group meals by local date on the client — no UTC-date attribution errors
+  const summaries = groupByLocalDate(meals);
+  const count     = summaries.length || 1;
+  const avg = {
+    calories:  Math.round(summaries.reduce((a, d) => a + d.calories, 0) / count),
+    nutrition: {
+      protein_g: +(summaries.reduce((a, d) => a + d.nutrition.protein_g, 0) / count).toFixed(1),
+      carbs_g:   +(summaries.reduce((a, d) => a + d.nutrition.carbs_g,   0) / count).toFixed(1),
+      fat_g:     +(summaries.reduce((a, d) => a + d.nutrition.fat_g,     0) / count).toFixed(1),
+      fiber_g:   +(summaries.reduce((a, d) => a + d.nutrition.fiber_g,   0) / count).toFixed(1),
+    },
+  };
 
   const chartData = summaries.map(s => ({
-    date: format(parseISO(s.date), 'EEE'),
-    fullDate: s.date,
-    calories: s.calories,
-    isCheat: s.is_cheat_day,
+    date: format(parseISO(s.date), 'M/d'),   // short label for X axis
+    fullDate: format(parseISO(s.date), 'EEE, MMM d'),
+    calories: Math.round(s.calories),
+    isCheat: false,
   }));
+
+  // History table — most recent first
+  const mealHistory = [...meals].reverse();
 
   return (
     <AppShell>
@@ -51,7 +100,8 @@ export default function TrendsPage() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-2 md:pt-0">
             <div>
               <h1 className="text-headline-lg flex items-center gap-3" style={{ color: 'var(--color-primary)' }}>
-                <Image src="/logo.png" alt="Bite" width={40} height={40} className="rounded-lg object-contain" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logo.png" alt="Bite" width={40} height={40} className="rounded-lg object-contain" />
                 <span>Bite Trends</span>
               </h1>
               <p className="text-body-md mt-2" style={{ color: 'var(--color-on-surface-variant)' }}>
@@ -216,7 +266,7 @@ export default function TrendsPage() {
                   </button>
                 </div>
 
-                {meals.length === 0 ? (
+                {mealHistory.length === 0 ? (
                   <div className="text-center py-16" style={{ color: 'var(--color-outline)' }}>
                     <span className="material-symbols-outlined" style={{ fontSize: '48px', display: 'block', marginBottom: '12px' }}>
                       spa
@@ -249,7 +299,7 @@ export default function TrendsPage() {
                     </div>
 
                     <div style={{ borderTop: '1px solid transparent' }}>
-                      {meals.map((meal) => (
+                      {mealHistory.map((meal) => (
                         <HistoryRow key={meal.id} meal={meal} />
                       ))}
                     </div>

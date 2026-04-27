@@ -245,8 +245,30 @@ function MacroCard({ icon, label, value, target, bg, iconBg, iconColor, textColo
         </span>
       </div>
       <div>
-        <span className="text-headline-md" style={{ color: textColor }}>{value.toFixed(0)}</span>
-        <span className="text-body-md ml-1" style={{ color: 'var(--color-on-surface-variant)' }}>g</span>
+        {/* Value + target label — mirrors the Energy card layout */}
+        <div className="flex items-end justify-between gap-2">
+          <div className="flex items-baseline gap-1">
+            <span className="text-headline-md" style={{ color: textColor }}>{value.toFixed(0)}</span>
+            <span className="text-body-md" style={{ color: 'var(--color-on-surface-variant)' }}>g</span>
+          </div>
+          <span className="text-label-sm mb-0.5" style={{ color: 'rgba(66,72,67,0.55)', fontSize: '11px' }}>
+            Target: {target}g
+          </span>
+        </div>
+        {/* Progress bar */}
+        <div
+          className="mt-2 w-full h-1 rounded-full overflow-hidden"
+          style={{ backgroundColor: 'var(--color-surface-container-high)' }}
+        >
+          <div
+            className="h-full rounded-full transition-all duration-500"
+            style={{
+              width: `${Math.min((value / target) * 100, 100)}%`,
+              backgroundColor: value > target ? 'var(--color-error)' : textColor,
+              opacity: 0.55,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

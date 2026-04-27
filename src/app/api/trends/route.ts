@@ -2,7 +2,11 @@ import { createServerSupabaseClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/supabase-server';
 import { NextRequest, NextResponse } from 'next/server';
 
-// GET /api/trends?range=all|7d|30d
+// GET /api/trends?range=all|7d|30d&start=<utc-iso>&end=<utc-iso>
+//
+// We no longer use daily_summaries for chart/averages — that table is keyed by
+// UTC date, so a meal at 10 pm CT appears in the next UTC day's bucket.
+// Instead we return raw meals and let the client group by local date.
 export async function GET(req: NextRequest) {
   const user = await getAuthUser(req);
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -11,50 +15,31 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const range = searchParams.get('range') ?? 'all';
 
-  // Build date filter — 'all' fetches everything
-  let summaryQuery = supabase
-    .from('daily_summaries')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('date', { ascending: true });
+  // Client sends UTC boundaries of its local date window so the filter is
+  // timezone-correct. Fall back to a UTC-date approach if not provided.
+  const startParam = searchParams.get('start');
+  const endParam   = searchParams.get('end');
 
   let mealsQuery = supabase
     .from('meals')
     .select('*')
     .eq('user_id', user.id)
-    .order('logged_at', { ascending: false })
-    .limit(100);
+    .order('logged_at', { ascending: true })
+    .limit(2000); // enough for years of daily logging
 
-  if (range !== 'all') {
+  if (range !== 'all' && startParam && endParam) {
+    mealsQuery = mealsQuery.gte('logged_at', startParam).lte('logged_at', endParam);
+  } else if (range !== 'all') {
+    // Fallback: UTC-based range (imprecise but safe)
     const days = range === '30d' ? 30 : 7;
-    const fromDate = new Date();
-    fromDate.setDate(fromDate.getDate() - days);
-    const fromStr = fromDate.toISOString().split('T')[0];
-    summaryQuery = summaryQuery.gte('date', fromStr);
-    mealsQuery   = mealsQuery.gte('logged_at', `${fromStr}T00:00:00Z`);
+    const from = new Date();
+    from.setDate(from.getDate() - days);
+    mealsQuery = mealsQuery.gte('logged_at', from.toISOString());
   }
 
-  const [{ data: summaries, error: summErr }, { data: meals, error: mealErr }] =
-    await Promise.all([summaryQuery, mealsQuery]);
-
-  if (summErr) return NextResponse.json({ error: summErr.message }, { status: 500 });
+  const { data: meals, error: mealErr } = await mealsQuery;
   if (mealErr) return NextResponse.json({ error: mealErr.message }, { status: 500 });
 
-  // Compute averages across all returned summaries
-  const s = summaries ?? [];
-  const count = s.length || 1;
-  const avgCalories = Math.round(s.reduce((acc, d) => acc + d.calories, 0) / count);
-  const avgProtein  = +(s.reduce((acc, d) => acc + (d.nutrition.protein_g ?? 0), 0) / count).toFixed(1);
-  const avgCarbs    = +(s.reduce((acc, d) => acc + (d.nutrition.carbs_g   ?? 0), 0) / count).toFixed(1);
-  const avgFat      = +(s.reduce((acc, d) => acc + (d.nutrition.fat_g     ?? 0), 0) / count).toFixed(1);
-  const avgFiber    = +(s.reduce((acc, d) => acc + (d.nutrition.fiber_g   ?? 0), 0) / count).toFixed(1);
-
-  return NextResponse.json({
-    summaries: s,
-    averages: {
-      calories: avgCalories,
-      nutrition: { protein_g: avgProtein, carbs_g: avgCarbs, fat_g: avgFat, fiber_g: avgFiber },
-    },
-    meals: meals ?? [],
-  });
+  // Return raw meals — the client groups by local date so timezone is exact.
+  return NextResponse.json({ meals: meals ?? [] });
 }

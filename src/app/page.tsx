@@ -145,9 +145,9 @@ export default function LandingPage() {
       </main>
 
       {/* ── Footer credit ─────────────────────────────────────────────────── */}
-      <div className="fixed bottom-5 left-0 right-0 flex justify-center pointer-events-none select-none">
+      <div className="fixed bottom-5 left-0 right-0 flex justify-center select-none">
         <span
-          className="flex items-center gap-1.5 italic uppercase"
+          className="flex items-center gap-1.5 italic uppercase pointer-events-none"
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
             fontSize: '10px',
@@ -162,7 +162,16 @@ export default function LandingPage() {
           >
             favorite
           </span>
-          &nbsp;by Tejas
+          &nbsp;by&nbsp;
+          <a
+            href="https://linkedin.com/in/ntejas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="not-italic pointer-events-auto"
+            style={{ color: '#566342', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+          >
+            Tejas
+          </a>
         </span>
       </div>
     </div>

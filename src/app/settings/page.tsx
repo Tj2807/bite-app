@@ -110,12 +110,31 @@ export default function SettingsPage() {
             <p>📊 Your data lives in Supabase and is never shared.</p>
           </div>
           <div
-            className="text-label-sm pt-3 mt-3"
-            style={{ borderTop: '1px solid rgba(193,200,194,0.3)', color: 'var(--color-outline)' }}
+            className="flex items-center gap-1.5 pt-3 mt-3 italic uppercase"
+            style={{
+              borderTop: '1px solid rgba(193,200,194,0.3)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: '10px',
+              letterSpacing: '0.09em',
+              color: 'rgba(92,94,92,0.55)',
+            }}
           >
-            To diagnose AI issues, visit{' '}
-            <a href="/api/chat/test" target="_blank" className="underline" style={{ color: 'var(--color-primary)' }}>
-              /api/chat/test
+            Made with&nbsp;
+            <span
+              className="material-symbols-outlined not-italic"
+              style={{ fontSize: '11px', fontVariationSettings: "'FILL' 1", color: '#566342' }}
+            >
+              favorite
+            </span>
+            &nbsp;by&nbsp;
+            <a
+              href="https://linkedin.com/in/ntejas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="not-italic pointer-events-auto"
+              style={{ color: '#566342', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+            >
+              Tejas
             </a>
           </div>
         </div>
