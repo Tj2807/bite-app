@@ -204,12 +204,17 @@ export async function POST(req: NextRequest) {
     // Strip JSON block from displayed message
     const cleanMessage = rawText.replace(/```json[\s\S]*?```/g, '').trim();
 
-    // Save chat history async (don't block response)
+    // Save chat history — insert sequentially so timestamps differ and ORDER BY works
     const supabase = createServerSupabaseClient();
-    void supabase.from('chat_messages').insert([
-      { role: 'user', content: lastMessage },
-      { role: 'assistant', content: cleanMessage, logged_meal: loggedMeal },
-    ]);
+    const { error: userSaveErr } = await supabase
+      .from('chat_messages')
+      .insert({ role: 'user', content: lastMessage });
+    if (userSaveErr) console.error('[chat] Failed to save user message:', userSaveErr.message);
+
+    const { error: assistantSaveErr } = await supabase
+      .from('chat_messages')
+      .insert({ role: 'assistant', content: cleanMessage, logged_meal: loggedMeal });
+    if (assistantSaveErr) console.error('[chat] Failed to save assistant message:', assistantSaveErr.message);
 
     console.log(`[chat] Responded via ${usedModel}`);
     return NextResponse.json({ message: cleanMessage, logged_meal: loggedMeal });

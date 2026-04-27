@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 // Using Material Symbols (loaded via <head> in layout.tsx)
 const navItems = [
-  { href: '/',         icon: 'menu_book',   label: 'Log'      },
+  { href: '/log',      icon: 'menu_book',   label: 'Log'      },
   { href: '/trends',   icon: 'trending_up', label: 'Trends'   },
   { href: '/settings', icon: 'settings',    label: 'Settings' },
 ];

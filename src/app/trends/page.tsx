@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { format, parseISO } from 'date-fns';
+import { AppShell } from '@/components/layout/AppShell';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip,
   ResponsiveContainer, Cell, ReferenceLine,
@@ -41,6 +42,7 @@ export default function TrendsPage() {
   }));
 
   return (
+    <AppShell>
     <div className="h-full overflow-y-auto scrollbar-thin" style={{ backgroundColor: 'var(--color-background)' }}>
       <div className="flex-1 w-full p-4 md:p-6 xl:p-10 pb-24 md:pb-10">
         <div style={{ maxWidth: '1280px', margin: '0 auto' }} className="space-y-8">
@@ -259,6 +261,7 @@ export default function TrendsPage() {
         </div>
       </div>
     </div>
+    </AppShell>
   );
 }
 

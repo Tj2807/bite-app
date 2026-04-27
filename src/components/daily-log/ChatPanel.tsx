@@ -8,22 +8,44 @@ interface ChatPanelProps {
   onMealLogged: () => void;
 }
 
+const WELCOME: ChatMessage = {
+  id: 'welcome',
+  role: 'assistant',
+  content: "Good morning. Taking a moment before your first meal. What are you planning to nourish yourself with today?",
+  created_at: new Date().toISOString(),
+};
+
 export function ChatPanel({ onMealLogged }: ChatPanelProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      id: 'welcome',
-      role: 'assistant',
-      content: "Good morning. Taking a moment before your first meal. What are you planning to nourish yourself with today?",
-      created_at: new Date().toISOString(),
-    },
-  ]);
-  const [input, setInput]   = useState('');
-  const [loading, setLoading] = useState(false);
+  const [messages, setMessages]     = useState<ChatMessage[]>([WELCOME]);
+  const [input, setInput]           = useState('');
+  const [loading, setLoading]       = useState(false);
+  const [hydrated, setHydrated]     = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  // Load today's chat history on mount
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, loading]);
+    async function loadHistory() {
+      try {
+        const res = await fetch('/api/chat/history');
+        if (!res.ok) return;
+        const data: ChatMessage[] = await res.json();
+        if (data.length > 0) {
+          // Always show welcome first, then today's history
+          setMessages([WELCOME, ...data]);
+        }
+      } catch {
+        // silently fall back to welcome message
+      } finally {
+        setHydrated(true);
+      }
+    }
+    loadHistory();
+  }, []);
+
+  // Scroll to bottom on new messages or after history loads
+  useEffect(() => {
+    if (hydrated) bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages, loading, hydrated]);
 
   const sendMessage = useCallback(async () => {
     const text = input.trim();
@@ -111,7 +133,21 @@ export function ChatPanel({ onMealLogged }: ChatPanelProps) {
         className="flex-1 overflow-y-auto p-8 space-y-6 scrollbar-thin"
         style={{ background: 'linear-gradient(to bottom, var(--color-surface), rgba(244,244,240,0.3))' }}
       >
-        {messages.map(msg => (
+        {/* History loading skeleton */}
+        {!hydrated && (
+          <div className="flex gap-4 max-w-[75%]">
+            <div className="w-8 h-8 rounded-full flex-shrink-0 animate-pulse"
+              style={{ backgroundColor: 'var(--color-surface-container-high)' }} />
+            <div className="flex-1 space-y-2 pt-1">
+              <div className="h-4 rounded-full animate-pulse w-3/4"
+                style={{ backgroundColor: 'var(--color-surface-container-high)' }} />
+              <div className="h-4 rounded-full animate-pulse w-1/2"
+                style={{ backgroundColor: 'var(--color-surface-container)' }} />
+            </div>
+          </div>
+        )}
+
+        {hydrated && messages.map(msg => (
           <div key={msg.id} className="animate-chat">
             {msg.role === 'assistant'
               ? <AssistantBubble msg={msg} />
