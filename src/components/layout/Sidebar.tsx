@@ -48,7 +48,11 @@ export function Sidebar() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    // Clear Supabase session (no-op for guests) + clear guest cookie
+    await Promise.all([
+      supabase.auth.signOut(),
+      fetch('/api/auth/signout', { method: 'POST' }),
+    ]);
     router.push('/');
   };
 
@@ -137,7 +141,11 @@ export function BottomNav() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    // Clear Supabase session (no-op for guests) + clear guest cookie
+    await Promise.all([
+      supabase.auth.signOut(),
+      fetch('/api/auth/signout', { method: 'POST' }),
+    ]);
     router.push('/');
   };
 
